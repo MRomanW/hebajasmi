@@ -6,7 +6,7 @@
         "image_M4WyQU": {
           "type": "image",
           "settings": {
-            "heading": "Heading",
+            "heading": "Fall collection is live",
             "position": "bottom",
             "position_mobile": "bottom_mobile",
             "image": "shopify:\/\/shop_images\/image_1.png",
@@ -16,9 +16,10 @@
         "video_pe8Kgy": {
           "type": "video",
           "settings": {
-            "heading": "Heading",
+            "heading": "Fall collection is live",
             "position": "bottom",
-            "position_mobile": "bottom_mobile"
+            "position_mobile": "bottom_mobile",
+            "video": "shopify:\/\/files\/videos\/ELIE_SAAB_RTW_FW24-25_Vignette_1_Banner_q3lomr.webm"
           }
         }
       },
