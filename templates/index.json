@@ -28,9 +28,9 @@
         "video_pe8Kgy"
       ],
       "settings": {
-        "colorOverlay": "",
+        "colorOverlay": "#000000",
         "opacityOverlay": 20,
-        "autoplay": true,
+        "autoplay": false,
         "speed": 4
       }
     }
