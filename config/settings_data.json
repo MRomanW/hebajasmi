@@ -2,8 +2,10 @@
   "current": {
     "logo_width": 90,
     "type_header_font": "montserrat_n5",
+    "custom_header_font": "pp_editorial_newultralight",
     "heading_scale": 100,
     "type_body_font": "montserrat_n4",
+    "custom_body_font": "montserrat_n5",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
