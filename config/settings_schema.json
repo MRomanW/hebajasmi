@@ -120,16 +120,12 @@
         "id": "custom_header_font",
         "options": [
           {
-            "value": "default",
-            "label": "default"
-          },
-          {
             "value": "pp_editorial_newultralight",
             "label": "PP Editorial New ultralight"
           }
         ],
         "label": "Custom header font",
-        "default": "default"
+        "default": "pp_editorial_newultralight"
       },
       {
         "type": "range",
