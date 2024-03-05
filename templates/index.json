@@ -12,10 +12,19 @@
             "image": "shopify:\/\/shop_images\/image_1.png",
             "image_mobile": "shopify:\/\/shop_images\/image_1_8115c24a-8eab-4562-b4f7-4b6b03401aec.png"
           }
+        },
+        "video_pe8Kgy": {
+          "type": "video",
+          "settings": {
+            "heading": "Heading",
+            "position": "bottom",
+            "position_mobile": "bottom_mobile"
+          }
         }
       },
       "block_order": [
-        "image_M4WyQU"
+        "image_M4WyQU",
+        "video_pe8Kgy"
       ],
       "settings": {
         "colorOverlay": "",
