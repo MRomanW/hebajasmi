@@ -9,7 +9,8 @@
             "heading": "Heading",
             "position": "bottom",
             "position_mobile": "bottom_mobile",
-            "image": "shopify:\/\/shop_images\/image_1.png"
+            "image": "shopify:\/\/shop_images\/image_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_1_8115c24a-8eab-4562-b4f7-4b6b03401aec.png"
           }
         }
       },
