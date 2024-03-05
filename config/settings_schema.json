@@ -116,6 +116,22 @@
         "info": "t:settings_schema.typography.settings.type_header_font.info"
       },
       {
+        "type": "select",
+        "id": "custom_header_font",
+        "options": [
+          {
+            "value": "default",
+            "label": "default"
+          },
+          {
+            "value": "pp_editorial_newultralight",
+            "label": "PP Editorial New ultralight"
+          }
+        ],
+        "label": "Custom header font",
+        "default": "default"
+      },
+      {
         "type": "range",
         "id": "heading_scale",
         "min": 100,
@@ -135,6 +151,12 @@
         "default": "assistant_n4",
         "label": "t:settings_schema.typography.settings.type_body_font.label",
         "info": "t:settings_schema.typography.settings.type_body_font.info"
+      },
+      {
+        "type": "font_picker",
+        "id": "custom_body_font",
+        "default": "assistant_n4",
+        "label": "Custom body font"
       },
       {
         "type": "range",
