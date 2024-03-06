@@ -60,13 +60,17 @@
 
               <style>
                 .customBlockContent--{{ block.id }} {
+                  width: 100%;
+                  position: absolute;
                   bottom: {{ block.settings.position }}%;
-                  position: relative;
+                  left: 50%;
+                  transform: translate(-50%, -{{ block.settings.position }}%);
                 }
 
                 @media screen and (max-width: 768px) {
                   .customBlockContent--{{ block.id }} {
                     bottom: {{ block.settings.position_mobile }}%;
+                    transform: translate(-50%, -{{ block.settings.position_mobile }}%);
                   }
                 }
               </style>
