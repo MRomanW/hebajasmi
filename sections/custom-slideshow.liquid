@@ -58,7 +58,27 @@
                 }}
               {% endif %}
 
-              <h1 class="font-h1 customSlideshowSwiper__title customSlideshowSwiper__title--{{ block.settings.position }} customSlideshowSwiper__title--{{ block.settings.position_mobile }}">{{ block.settings.heading }}</h1>             
+              <style>
+                .customBlockContent--{{ block.id }} {
+                  bottom: {{ block.settings.position }}%;
+                  transform: translateX(-50%);
+                }
+
+                @media screen and (max-width: 768px) {
+                  .customBlockContent--{{ block.id }} {
+                    bottom: {{ block.settings.position_mobile }}%;
+                  }
+                }
+              </style>
+
+              <div class="customBlockContent--{{ block.id }}">
+                <h1 class="font-h1 customSlideshowSwiper__title">{{ block.settings.heading }}</h1> 
+              
+                {% if block.settings.btn_text != blank %}
+                  <a class="btn--white" href="{{ block.settings.btn_url }}">{{ block.settings.btn_text }}</a>
+                {% endif %}
+              </div>
+                        
             </div>
           
           {% when 'video' %}
@@ -97,7 +117,27 @@
                 }}
               {% endif %}
 
-              <h1 class="font-h1 customSlideshowSwiper__title customSlideshowSwiper__title--{{ block.settings.position }} customSlideshowSwiper__title--{{ block.settings.position_mobile }}">{{ block.settings.heading }}</h1> 
+              <style>
+                .customBlockContent--{{ block.id }} {
+                  bottom: {{ block.settings.position }}%;
+                  transform: translateX(-50%);
+                }
+
+                @media screen and (max-width: 768px) {
+                  .customBlockContent--{{ block.id }} {
+                    bottom: {{ block.settings.position_mobile }}%;
+                  }
+                }
+              </style>
+
+              <div class="customBlockContent--{{ block.id }}">
+                <h1 class="font-h1 customSlideshowSwiper__title">{{ block.settings.heading }}</h1> 
+              
+                {% if block.settings.btn_text != blank %}
+                  <a class="btn--white" href="{{ block.settings.btn_url }}">{{ block.settings.btn_text }}</a>
+                {% endif %}
+              </div>
+        
             </div> 
         {% endcase %}
       {%- endfor -%}
@@ -143,44 +183,24 @@
             "default": "Heading"
           },
           {
-            "type": "select",
+            "type": "range",
             "id": "position",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
             "label": "Position",
-            "options": [
-              {
-                "value": "top",
-                "label": "Top"
-              },
-              {
-                "value": "center",
-                "label": "Center"
-              },
-              {
-                "value": "bottom",
-                "label": "Bottom"
-              }
-            ],
-            "default": "bottom"
+            "default": 26
           },
           {
-            "type": "select",
+            "type": "range",
             "id": "position_mobile",
-            "label": "Position Mobile",
-            "options": [
-              {
-                "value": "top_mobile",
-                "label": "Top Mobile"
-              },
-              {
-                "value": "center_mobile",
-                "label": "Center Mobile"
-              },
-              {
-                "value": "bottom_mobile",
-                "label": "Bottom Mobile"
-              }
-            ],
-            "default": "bottom_mobile"
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position",
+            "default": 26
           },
           {
             "type": "header",
@@ -211,6 +231,17 @@
             "id": "heading",
             "label": "Heading",
             "default": "Heading"
+          },
+          {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button URL"
+          },
+          {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text",
+            "default": "Show now"
           },
           {
             "type": "select",

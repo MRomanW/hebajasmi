@@ -18,6 +18,7 @@
     font-weight: 400;
     font-size: 3.2rem;
     line-height: 110%;
+    letter-spacing: 0;
   }
 
   .font-h2 {
@@ -41,6 +42,25 @@
     line-height: 110%;
   }
 
+  .btn--white {
+    display: block;
+    padding: 14px 32px;
+    color: #fff;
+    border: 1px solid #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 100%;
+    background-color: transparent
+    transition: all .3s ease;
+  }
+
+  .btn--white:hover {
+    color: #000;
+    border: 1px solid #000;
+    background-color: #fff
+  }
+
   :root {
     --color-black: #000;
     --color-white: #fff;
@@ -55,4 +75,5 @@
       font-size: 1.4rem;
     }
   }
+  
 {% endstyle %}
