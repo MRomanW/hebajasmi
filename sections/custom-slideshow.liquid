@@ -78,7 +78,7 @@
                   <a class="btn--white" href="{{ block.settings.btn_url }}">{{ block.settings.btn_text }}</a>
                 {% endif %}
               </div>
-                        
+
             </div>
           
           {% when 'video' %}
@@ -183,6 +183,17 @@
             "default": "Heading"
           },
           {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button URL"
+          },
+          {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text",
+            "default": "Show now"
+          },
+          {
             "type": "range",
             "id": "position",
             "min": 0,
@@ -244,44 +255,24 @@
             "default": "Show now"
           },
           {
-            "type": "select",
+            "type": "range",
             "id": "position",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
             "label": "Position",
-            "options": [
-              {
-                "value": "top",
-                "label": "Top"
-              },
-              {
-                "value": "center",
-                "label": "Center"
-              },
-              {
-                "value": "bottom",
-                "label": "Bottom"
-              }
-            ],
-            "default": "bottom"
+            "default": 26
           },
           {
-            "type": "select",
+            "type": "range",
             "id": "position_mobile",
-            "label": "Position Mobile",
-            "options": [
-              {
-                "value": "top_mobile",
-                "label": "Top Mobile"
-              },
-              {
-                "value": "center_mobile",
-                "label": "Center Mobile"
-              },
-              {
-                "value": "bottom_mobile",
-                "label": "Bottom Mobile"
-              }
-            ],
-            "default": "bottom_mobile"
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "label": "Position",
+            "default": 26
           },
           {
             "type": "header",
