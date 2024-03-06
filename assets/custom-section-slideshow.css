@@ -1,5 +1,6 @@
 .customSlideshowSwiper {
-  height: calc(100svh - 39px);
+  /* height: calc(100svh - 39px); */
+  height: 100svh; 
   position: relative;
 }
 
@@ -11,11 +12,8 @@
 }
 
 .customSlideshowSwiper__title {
-  position: absolute;
-  left: 50%;
   z-index: 10;
   text-align: center;
-  width: 100%;
   color: var(--color-white);
   text-transform: uppercase;
 }
