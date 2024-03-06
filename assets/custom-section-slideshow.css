@@ -18,6 +18,10 @@
   text-transform: uppercase;
 }
 
+.customSlideshowSwiper__btn {
+  margin: auto;
+}
+
 .customSlideshowSwiperDesktop__mobile {
   display: none;
 }

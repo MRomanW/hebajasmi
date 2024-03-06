@@ -25,6 +25,19 @@
 }
 
 @media screen and (max-width: 768px) {
+  .collection-banner .page-width {
+    padding: 0;
+  }
+
+  .collection-banner .collection-banner__content {
+    padding: 0 1.5rem;
+  }
+
+  .collection-banner__paragraph {
+    max-width: 40%;
+  }
+  
+
   .collection-banner__image img {
     aspect-ratio: 1.392;
   }

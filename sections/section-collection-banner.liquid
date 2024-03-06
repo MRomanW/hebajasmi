@@ -14,7 +14,7 @@
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding">
+<div class="section-{{ section.id }}-padding collection-banner">
   <div class="page-width">
     <div class="collection-banner__wrapper">
       {% if section.settings.collection.image != blank %}
@@ -47,6 +47,9 @@
             {{ section.settings.collection.metafields.custom.short_description | metafield_tag }}
           </div>
         {% endif %}
+
+        <a class="collection-banner__btn btn--black" href="{{ section.settings.collection.url }}">{{ 'custom.shop_the_collection' | t }}</a>
+
       </div>
     </div>
   </div>
