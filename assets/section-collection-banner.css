@@ -24,6 +24,10 @@
   text-transform: uppercase;
 }
 
+.collection-banner__btn {
+  margin-top: 3rem;
+}
+
 @media screen and (max-width: 768px) {
   .collection-banner .page-width {
     padding: 0;
