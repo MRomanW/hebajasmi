@@ -37,9 +37,36 @@
         "autoplay": false,
         "speed": 4
       }
+    },
+    "section_collection_banner_WJkY4h": {
+      "type": "section-collection-banner",
+      "settings": {
+        "collection": "pre-fall-2024",
+        "padding_top": 140,
+        "padding_bottom": 72
+      }
+    },
+    "section_collection_banner_bMPkMW": {
+      "type": "section-collection-banner",
+      "settings": {
+        "collection": "a-desert-rose",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "section_collection_banner_PDnVBz": {
+      "type": "section-collection-banner",
+      "settings": {
+        "collection": "a-desert-rose-1",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     }
   },
   "order": [
-    "custom_slideshow_jd6hrM"
+    "custom_slideshow_jd6hrM",
+    "section_collection_banner_WJkY4h",
+    "section_collection_banner_bMPkMW",
+    "section_collection_banner_PDnVBz"
   ]
 }
