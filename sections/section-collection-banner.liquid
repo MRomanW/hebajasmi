@@ -16,7 +16,39 @@
 
 <div class="section-{{ section.id }}-padding">
   <div class="page-width">
-    
+    <div class="collection-banner__wrapper">
+      {% if section.settings.collection.image != blank %}
+        {%- capture sizes -%}
+          (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+          (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+        {%- endcapture -%}
+
+        <div class="collection-banner__image">
+          {{
+            section.settings.collection.image
+            | image_url: width: 3200
+            | image_tag:
+              widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
+              alt: section.settings.collection.image.alt,
+              sizes: sizes,
+              loading: 'ease',
+              fetchpriority: 'low'
+          }}
+        </div>
+      {% endif %}
+      
+      <div class="collection-banner__content">
+        {% if section.settings.collection.metafields.custom.subheading != blank %}
+          <span class="collection-banner__subheding font-h4">{{ section.settings.collection.metafields.custom.subheading }}</span>
+        {% endif %}
+        <h2 class="collection-banner__heading font-h2">{{ section.settings.collection.title }}</h2>
+        {% if section.settings.collection.metafields.custom.short_description != blank %}
+          <div class="collection-banner__paragraph font-paragraph">
+            {{ section.settings.collection.metafields.custom.short_description | metafield_tag }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>
 

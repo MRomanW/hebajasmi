@@ -1,0 +1,31 @@
+.collection-banner__image img {
+  aspect-ratio: 1.3937;
+  object-fit: cover;
+}
+
+.collection-banner__content {
+  margin-top: 4.2rem;
+}
+
+.collection-banner__heading {
+  margin: 0.9rem 0 2rem;
+}
+
+.collection-banner__paragraph {
+  max-width: 40%;
+}
+
+.collection-banner__paragraph p {
+  margin: 0;
+}
+
+.collection-banner__subheding,
+.collection-banner__heading {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .collection-banner__image img {
+    aspect-ratio: 1.392;
+  }
+}
