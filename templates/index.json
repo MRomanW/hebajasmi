@@ -61,12 +61,21 @@
         "padding_top": 72,
         "padding_bottom": 72
       }
+    },
+    "custom_section_collection_slider_zE9APj": {
+      "type": "custom-section-collection-slider",
+      "settings": {
+        "collection": "resort-2024",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     }
   },
   "order": [
     "custom_slideshow_jd6hrM",
     "section_collection_banner_WJkY4h",
     "section_collection_banner_bMPkMW",
-    "section_collection_banner_PDnVBz"
+    "section_collection_banner_PDnVBz",
+    "custom_section_collection_slider_zE9APj"
   ]
 }
