@@ -70,6 +70,40 @@
         "padding_top": 72,
         "padding_bottom": 72
       }
+    },
+    "custom_card_collection_FCLYVe": {
+      "type": "custom-card-collection",
+      "blocks": {
+        "collection_card_VnRtBN": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/haute_couture.png",
+            "heading": "haute couture"
+          }
+        },
+        "collection_card_gfPznD": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MOX_0518_insta.png",
+            "heading": "bridal"
+          }
+        },
+        "collection_card_xp39tL": {
+          "type": "collection_card",
+          "settings": {
+            "heading": "Hading"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_VnRtBN",
+        "collection_card_gfPznD",
+        "collection_card_xp39tL"
+      ],
+      "settings": {
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     }
   },
   "order": [
@@ -77,6 +111,7 @@
     "section_collection_banner_WJkY4h",
     "section_collection_banner_bMPkMW",
     "section_collection_banner_PDnVBz",
-    "custom_section_collection_slider_zE9APj"
+    "custom_section_collection_slider_zE9APj",
+    "custom_card_collection_FCLYVe"
   ]
 }
