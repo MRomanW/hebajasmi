@@ -305,7 +305,11 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
+    {% comment %} Swiper JS {% endcomment %}
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+    {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+    {% comment %} {% sections 'header-group' %} {% endcomment %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}

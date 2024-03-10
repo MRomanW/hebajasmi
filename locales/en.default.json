@@ -513,5 +513,8 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "custom": {
+    "shop_the_collection": "shop the collection"
   }
 }

@@ -1,1 +1,118 @@
-{"sections":{"image_banner":{"type":"image-banner","blocks":{"heading":{"type":"heading","settings":{"heading":"Browse our latest products","heading_size":"h0"}},"button":{"type":"buttons","settings":{"button_label_1":"Shop all","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading","button"],"settings":{"image_overlay_opacity":40,"image_height":"large","desktop_content_position":"bottom-center","show_text_box":false,"desktop_content_alignment":"center","color_scheme":"scheme-3","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":false,"show_text_below":false}},"featured_collection":{"type":"featured-collection","settings":{"title":"Featured products","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"all","products_to_show":8,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":44,"padding_bottom":36}}},"order":["image_banner","featured_collection"]}
+{
+  "sections": {
+    "custom_slideshow_jd6hrM": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "image_M4WyQU": {
+          "type": "image",
+          "settings": {
+            "heading": "Fall collection is live",
+            "btn_url": "#",
+            "btn_text": "Show now",
+            "position": 32,
+            "position_mobile": 24,
+            "image": "shopify:\/\/shop_images\/image_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_1_8115c24a-8eab-4562-b4f7-4b6b03401aec.png"
+          }
+        },
+        "video_pe8Kgy": {
+          "type": "video",
+          "settings": {
+            "heading": "Fall collection is live",
+            "btn_url": "#",
+            "btn_text": "Show now",
+            "position": 32,
+            "position_mobile": 24,
+            "video": "shopify:\/\/files\/videos\/ELIE_SAAB_RTW_FW24-25_Vignette_1_Banner_q3lomr.webm"
+          }
+        }
+      },
+      "block_order": [
+        "image_M4WyQU",
+        "video_pe8Kgy"
+      ],
+      "settings": {
+        "colorOverlay": "#000000",
+        "opacityOverlay": 20,
+        "autoplay": false,
+        "speed": 4
+      }
+    },
+    "section_collection_banner_WJkY4h": {
+      "type": "section-collection-banner",
+      "settings": {
+        "collection": "pre-fall-2024",
+        "padding_top": 140,
+        "padding_bottom": 72
+      }
+    },
+    "section_collection_banner_bMPkMW": {
+      "type": "section-collection-banner",
+      "settings": {
+        "collection": "a-desert-rose",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "section_collection_banner_PDnVBz": {
+      "type": "section-collection-banner",
+      "settings": {
+        "collection": "a-desert-rose-1",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "custom_section_collection_slider_zE9APj": {
+      "type": "custom-section-collection-slider",
+      "settings": {
+        "collection": "resort-2024",
+        "products_to_show": 16,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "custom_card_collection_FCLYVe": {
+      "type": "custom-card-collection",
+      "blocks": {
+        "collection_card_VnRtBN": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/haute_couture.png",
+            "heading": "haute couture"
+          }
+        },
+        "collection_card_gfPznD": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MOX_0518_insta.png",
+            "heading": "bridal"
+          }
+        },
+        "collection_card_xp39tL": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MOX_0518_insta_3bb41259-3ea2-4ae3-b745-14cc91ead847.png",
+            "heading": "ready to wear"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_VnRtBN",
+        "collection_card_gfPznD",
+        "collection_card_xp39tL"
+      ],
+      "settings": {
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "custom_slideshow_jd6hrM",
+    "section_collection_banner_WJkY4h",
+    "section_collection_banner_bMPkMW",
+    "section_collection_banner_PDnVBz",
+    "custom_section_collection_slider_zE9APj",
+    "custom_card_collection_FCLYVe"
+  ]
+}

@@ -1,0 +1,59 @@
+.collection-banner__image img {
+  aspect-ratio: 1.3937;
+  object-fit: cover;
+}
+
+.collection-banner__content {
+  margin-top: 4.2rem;
+}
+
+.collection-banner__heading {
+  margin: 0.9rem 0 2rem;
+}
+
+.collection-banner__paragraph {
+  max-width: 40%;
+}
+
+.collection-banner__paragraph p {
+  margin: 0;
+}
+
+.collection-banner__subheding,
+.collection-banner__heading {
+  text-transform: uppercase;
+}
+
+.collection-banner__btn {
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .collection-banner .page-width {
+    padding: 0;
+  }
+
+  .collection-banner .collection-banner__content {
+    padding: 0 1.5rem;
+    text-align: center;
+    margin-top: 1.2rem;
+  }
+
+  .collection-banner__heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .collection-banner__paragraph {
+    text-wrap: balance;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .collection-banner__image img {
+    aspect-ratio: 1.392;
+  }
+
+  .collection-banner__btn {
+    margin: 1.8rem auto auto;
+  }
+}

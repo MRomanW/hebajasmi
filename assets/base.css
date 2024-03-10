@@ -3517,3 +3517,8 @@ details-disclosure > details {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+img {
+  width: 100%;
+  height: 100%;
+}

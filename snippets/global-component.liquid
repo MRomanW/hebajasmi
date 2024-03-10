@@ -1,43 +1,128 @@
 {% style %}
-  .ff-menu {
+  .font-menu {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 100%;
+    letter-spacing: 0;
   }
   
-  .ff-paragraph {
+  .font-paragraph {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 110%;
+    letter-spacing: 0;
   }
 
-  .ff-h1 {
+  .font-h1 {
     font-family: "pp_editorial_newultralight", sans-serif;
     font-weight: 400;
     font-size: 3.2rem;
     line-height: 110%;
+    letter-spacing: 0;
   }
 
-  .ff-h2 {
+  .font-h2 {
     font-family: "pp_editorial_newultralight", sans-serif;
     font-weight: 400;
     font-size: 2.8rem;
     line-height: 110%;
+    letter-spacing: 0;
   }
 
-  .ff-h3 {
+  .font-h3 {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 110%;
+    letter-spacing: 0;
   }
 
-  .ff-h4 {
+  .font-h4 {
     font-family: "pp_editorial_newultralight", sans-serif;
     font-weight: 400;
     font-size: 1.8rem;
     line-height: 110%;
+    letter-spacing: 0;
+  }
+
+  .btn--white {
+    text-decoration: none;
+    width: fit-content;
+    display: block;
+    padding: 14px 32px;
+    color: #fff;
+    border: 1px solid #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 100%;
+    background-color: transparent;
+    transition: all .3s ease;
+    z-index: 10;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  .btn--white:hover {
+    color: #000;
+    background-color: #fff
+  }
+
+  .btn--black {
+    text-decoration: none;
+    width: fit-content;
+    display: block;
+    padding: 14px 32px;
+    color: #000;
+    border: 1px solid #000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 100%;
+    background-color: transparent;
+    transition: all .3s ease;
+    z-index: 10;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+  }
+
+  .btn--black:hover {
+    color: #fff;
+    background-color: #000;
+  }
+
+  :root {
+    --color-black: #000;
+    --color-white: #fff;
+  }
+
+  @media screen and (max-width: 768px)  {
+    .font-h1 {
+      font-size: 2.4rem;
+    }
+
+    .font-h2 {
+      font-size: 1.6rem;
+    }
+
+    .font-h3 {
+      font-size: 1.4rem;
+    }
+
+    .font-h4 {
+      font-size: 1.4rem;
+    }
+
+    .btn--white {
+      font-size: 1.2rem;
+    }
+
+    .btn--black {
+      font-size: 1.2rem;
+    }
   }
 {% endstyle %}

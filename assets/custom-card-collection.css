@@ -1,0 +1,40 @@
+.collection__card__block {
+  position: relative;
+}
+
+.collection__card__heading {
+  color: var(--color-white);
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+@media screen and (min-width: 767px) {
+  .collection__card__wrapper .swiper-wrapper {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .collection__card .page-width {
+    padding: 0;
+  }
+} 
+
+.collection-slider__swiper .swiper-wrapper{
+  -webkit-transition-timing-function:linear!important;    transition-timing-function:linear!important; 
+  position: relative;
+}
+
+@keyframes line-slide {
+  0% {
+    background-position: -5% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
