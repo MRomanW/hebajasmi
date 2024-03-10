@@ -1,32 +1,19 @@
-.container {
-  display: flex;
-  width: 100%;
-  text-align: center;
-  padding-bottom: 50px;
-  overflow: hidden;
-}
-
-
-.content {
-  flex: 1 1 70%;
-  max-width: 70%;
-  overflow: hidden;
-}
-
-
-.swiper-container {
-  height: 100%;
-}
-
-
-/* ------- */
 @media screen and (min-width: 767px) {
+  .collection-slider__container {
+    display: flex;
+  }
+  
+  .collection-slider__swiper {
+    height: 100%;
+  }
+
   .collection-slider__section {
     display: flex;
   }
 
   .collection-slider__products {
     flex: 0 0 70%;
+    overflow: hidden;
     transform: translate(-100%, 0px);
   }
 }
@@ -47,4 +34,5 @@
 
 .collection-slider__information {
   width: 20%;
+  text-align: center;
 }
