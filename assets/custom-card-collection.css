@@ -24,3 +24,17 @@
     padding: 0;
   }
 } 
+
+.collection-slider__swiper .swiper-wrapper{
+  -webkit-transition-timing-function:linear!important;    transition-timing-function:linear!important; 
+  position: relative;
+}
+
+@keyframes line-slide {
+  0% {
+    background-position: -5% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
