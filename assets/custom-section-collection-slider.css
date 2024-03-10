@@ -1,7 +1,50 @@
-.collection-slider {
+.container {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 50px;
+  overflow: hidden;
+}
 
+
+.content {
+  flex: 1 1 70%;
+  max-width: 70%;
+  overflow: hidden;
+}
+
+
+.swiper-container {
+  height: 100%;
+}
+
+
+/* ------- */
+@media screen and (min-width: 767px) {
+  .collection-slider__section {
+    display: flex;
+  }
+
+  .collection-slider__products {
+    flex: 0 0 70%;
+    transform: translate(-100%, 0px);
+  }
+}
+
+.collection-slider .page-width {
+  width: 100%;
+}
+
+.collection-slider__section {
+  overflow: hidden;
 }
 
 .collection-slider__wrapper {
+  flex: 0 0 100%;
   display: flex;
+  align-items: center;
+}
+
+.collection-slider__information {
+  width: 20%;
 }

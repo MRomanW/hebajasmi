@@ -19,56 +19,52 @@
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding collection-slider">
-  <div class="page-width">
-    <div class="collection-slider__wrapper">
-      <div class="collection-slider__information">
-        {% if section.settings.collection.metafields.custom.subheading != blank %}
-          <span class="collection-banner__subheding font-h4">{{ section.settings.collection.metafields.custom.subheading }}</span>
-        {% endif %}
-        <h2 class="collection-banner__heading font-h2">{{ section.settings.collection.title }}</h2>
-        <a class="collection-banner__btn btn--black" href="{{ section.settings.collection.url }}">{{ 'custom.shop_the_collection' | t }}</a>
+<div class="section-{{ section.id }}-padding collection-slider wrapper">
+  <div class="container">
+    <div class="collection-slider__wrapper section__content">
+      <div class="page-width">
+        <div class="collection-slider__information section__body">
+          {% if section.settings.collection.metafields.custom.subheading != blank %}
+            <span class="collection-banner__subheding font-h4">{{ section.settings.collection.metafields.custom.subheading }}</span>
+          {% endif %}
+          <h2 class="collection-banner__heading font-h2">{{ section.settings.collection.title }}</h2>
+          <a class="collection-banner__btn btn--black" href="{{ section.settings.collection.url }}">{{ 'custom.shop_the_collection' | t }}</a>
+        </div>
+        <h1>hello</h1>
       </div>
-      
-      {% comment %} <div class="collection-slider__products swiper">
+    </div>
+
+    <div class="collection-slider__products section__image content">
+      <div class="swiper collection-slider__swiper swiper-container">
         <div class="swiper-wrapper">
-          {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+          {% for product in section.settings.collection.products limit: section.settings.products_to_show %}
             <a href="{{ product.url }}" class="swiper-slide">
-              {{
-                product.featured_image
-                | image_url: width: 3200
-                | image_tag:
-                  widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                  alt: product.url.alt,
-                  sizes: sizes,
-                  loading: 'ease',
-                  fetchpriority: 'low'
-              }}
+              <div class="">
+                {{
+                  product.featured_media
+                  | image_url: width: 1500
+                  | image_tag: sizes: sizes, widths: '165, 360, 535, 750, 1070, 1500'
+                }}
+              </div>
             </a>
-          {%- endfor -%}
+          {% endfor %}
         </div>
       </div>
-
-      <div class="collection-slider-swiper-button-prev swiper-button-prev"></div>
-      <div class="collection-slider-swiper-button-next swiper-button-next"></div>  {% endcomment %}
     </div>
   </div>
 </div>
 
-{% comment %} <script>
-  swiperCollection = new Swiper('.collection-slider__products', {
-    slidesPerView: 2.8,
-    loop: true,
-    spaceBetween: 25,
-    keyboardControl: true,
-    centeredSlides: true,
-
-    navigation: {
-      nextEl: '.collection-slider-swiper-button-next',
-      prevEl: '.collection-slider-swiper-button-prev',
-    }
+<script>
+  var swiper = new Swiper(".swiper-container", {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
   });
-</script> {% endcomment %}
+</script>
+
 
 {% schema %}
   {
