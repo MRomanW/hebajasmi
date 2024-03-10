@@ -48,13 +48,21 @@
         </div>
       </div>
     </div>
+
+    <a class="collection-banner__btn btn--black collection-banner__btn--mobile" href="{{ section.settings.collection.url }}">{{ 'custom.shop_the_collection' | t }}</a>
   </div>
 </div>
 
 <script>
   var swiper = new Swiper(".collection-slider__swiper", {
-    slidesPerView: 2.5,
-    spaceBetween: 32
+    slidesPerView: 1.2,
+    spaceBetween: 32,
+    breakpoints: {
+      768: {
+        slidesPerView: 2.5,
+      }
+    }
+    
   });
 </script>
 

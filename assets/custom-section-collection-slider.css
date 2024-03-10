@@ -16,6 +16,10 @@
     overflow: hidden;
     transform: translate(-100%, 0px);
   }
+
+  .collection-banner__btn--mobile {
+    display: none;
+  }
 }
 
 .collection-slider .page-width {
@@ -35,4 +39,19 @@
 .collection-slider__information {
   width: 20%;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .collection-banner__heading {
+    font-size: 2.6rem;
+  }
+
+  .collection-slider__information {
+    width: 100%;
+    margin-bottom: 3.2rem;
+  }
+
+  .collection-slider__information .collection-banner__btn {
+    display: none;
+  }
 }
