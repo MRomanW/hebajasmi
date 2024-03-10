@@ -66,6 +66,7 @@
       "type": "custom-section-collection-slider",
       "settings": {
         "collection": "resort-2024",
+        "products_to_show": 16,
         "padding_top": 72,
         "padding_bottom": 72
       }
