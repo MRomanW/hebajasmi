@@ -1,3 +1,78 @@
+function setCookie(name, value) {
+  document.cookie = name + '=' + value + ';';
+}
+
+function getCookie(name) {
+  const cookies = document.cookie.split(';');
+  for (let cookie of cookies) {
+    const [cookieName, cookieValue] = cookie.split('=');
+    if (cookieName.trim() === name) {
+      return cookieValue;
+    }
+  }
+  return null;
+}
+
+setCookie('productGridValue', 'grid--3-col-desktop');
+
+function productGrid() {
+  const gridThird = document.querySelector('#grid-third');
+  const gridFour = document.querySelector('#grid-four');
+  const productGrid = document.querySelector('#product-grid');
+
+  if (gridThird) {
+    gridThird.addEventListener('click', () => {
+      if (productGrid) {
+        productGrid.classList.remove('grid--4-col-desktop');
+        productGrid.classList.add('grid--3-col-desktop');
+      }
+      gridFour.classList.remove('active');
+      gridThird.classList.add('active');
+
+      setCookie('productGridValue', 'grid--3-col-desktop');
+    })
+  };
+
+  if (gridFour) {
+    gridFour.addEventListener('click', () => {
+      if (productGrid) {
+        productGrid.classList.remove('grid--3-col-desktop');
+        productGrid.classList.add('grid--4-col-desktop');
+      }
+
+      gridFour.classList.add('active');
+      gridThird.classList.remove('active');
+
+      setCookie('productGridValue', 'grid--4-col-desktop');
+    })
+  }
+}
+
+productGrid();
+
+function productGridCookie() {
+  const gridThird = document.querySelector('#grid-third');
+  const gridFour = document.querySelector('#grid-four');
+  const productGrid = document.querySelector('#product-grid');
+  
+  const savedValue = getCookie('productGridValue');
+  if (savedValue === 'grid--3-col-desktop') {
+    productGrid.classList.remove('grid--4-col-desktop');
+    productGrid.classList.add('grid--3-col-desktop');
+    gridThird.classList.add('active');
+    gridFour.classList.remove('active');
+    setCookie('productGridValue', 'grid--3-col-desktop');
+  } else {
+    productGrid.classList.remove('grid--3-col-desktop');
+    productGrid.classList.add('grid--4-col-desktop');
+    gridFour.classList.add('active');
+    gridThird.classList.remove('active');
+    setCookie('productGridValue', 'grid--4-col-desktop');
+  }
+}
+
+productGridCookie();
+
 class FacetFiltersForm extends HTMLElement {
   constructor() {
     super();
@@ -56,6 +131,11 @@ class FacetFiltersForm extends HTMLElement {
     });
 
     if (updateURLHash) FacetFiltersForm.updateURLHash(searchParams);
+
+    setTimeout(() => {
+      productGrid();
+      productGridCookie();
+    }, 1000);
   }
 
   static renderSectionFromFetch(url, event) {

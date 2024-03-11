@@ -83,7 +83,7 @@
 }
 
 .facet-filters__field .select {
-  width: 100px;
+  width: 80px;
   position: absolute;
   opacity: 0;
 }
@@ -1020,6 +1020,7 @@ input.mobile-facets__checkbox {
   align-self: center;
   position: relative;
   text-align: right;
+  display: none;
 }
 
 .product-count__text {
@@ -1201,3 +1202,26 @@ input.mobile-facets__checkbox {
     padding: 0 1rem 1rem;
   }
 }
+
+.button-product-grid button {
+  background-color: transparent;
+  border: none;
+  opacity: 0.5;
+  padding: 0 2px;
+}
+
+.button-product-grid button.active {
+  opacity: 1;
+  transition: all .3s ease;
+}
+
+#product-grid {
+  margin-top: 5rem; 
+}
+
+@media screen  and (max-width: 768px) {
+  #product-grid {
+    margin-top: 2.5rem; 
+  }
+}
+
