@@ -745,6 +745,9 @@ a.active-facets__button.focused .active-facets__button-inner,
 
 .mobile-facets__open-label {
   transition: text-decoration var(--duration-short) ease;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.4rem;
 }
 
 .mobile-facets__open:hover .mobile-facets__open-label {
@@ -1167,6 +1170,7 @@ input.mobile-facets__checkbox {
 
   .facets-container-drawer .product-count {
     margin: 0 0 0.5rem 3.5rem;
+    display: none;
   }
 
   .facets-container-drawer .facets-pill {
