@@ -202,6 +202,20 @@
   margin-bottom: 0;
 }
 
+.card__heading a {
+  font-size: 1.6rem;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+.card-information .price-item {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 110%;
+}
+
 .card__heading:last-child {
   margin-bottom: 0;
 }
@@ -480,5 +494,15 @@
 
   .grid__item:nth-child(8n) .product-card-wrapper:hover .shape--blob {
     clip-path: polygon(var(--shape--blob-5));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__heading a {
+    font-size: 1.4rem;
+  }
+  
+  .card-information .price-item {
+    font-size: 1.2rem;
   }
 }

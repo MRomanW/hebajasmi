@@ -23,6 +23,7 @@
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
 
+
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
@@ -35,6 +36,15 @@
       assign ratio = 1
     endif
   -%}
+  
+  {% capture ratioPercent %}
+    {% if assignRatioPercent != blank %}
+      style="--ratio-percent: 146%;"
+    {% else %}
+      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+    {% endif %}
+  {% endcapture %}
+
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
@@ -46,11 +56,11 @@
         {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}
         {% if horizontal_class %} card--horizontal{% endif %}
       "
-      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+      {{ ratioPercent }}
     >
       <div
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
-        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+       {{ ratioPercent }}
       >
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
@@ -339,7 +349,7 @@
         {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
         {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
       "
-      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+     {{ ratioPercent }}
     >
       <div
         class="card__inner{% if settings.card_style == 'standard' %} color-{{ settings.card_color_scheme }} gradient{% endif %} ratio"
