@@ -1,4 +1,4 @@
-{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+{{ 'section-contact-form-page.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -14,8 +14,44 @@
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding">
+<div class="section-{{ section.id }}-padding ">
+  <div class="page-width">
+    <div class="section-contact-page">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'menu' %}
+            <div class="section-contact-page__menu">
+              <ul class="page-menu">
+                {% for link in block.settings.menu.links %}
+                  <li>
+                    <a
+                      href="{{ link.url }}"
+                      class="font-menu"
+                    >
+                      {{ link.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
 
+          {% when 'form' %}
+            <div class="section-contact-page__form">
+              <div class="contact-page__content">
+                {% if block.settings.heding != blank %}
+                  <h2 class="font-h2">{{ block.settings.heding }}</h2>
+                {% endif %}
+
+                <div class="font-paragraph">
+                  {{ block.settings.description }}
+                </div>
+              </div>
+            </div>
+            
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 {% schema %}
@@ -25,6 +61,7 @@
       {
         "name": "Menu",
         "type": "menu",
+        "limit": 1,
         "settings": [
           {
             "type": "link_list",
@@ -36,6 +73,7 @@
       {
         "name": "Form",
         "type": "form",
+        "limit": 1,
         "settings": [
           {
             "type": "text",
