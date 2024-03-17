@@ -28,11 +28,38 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "section_contact_form_VTf74U": {
+      "type": "section-contact-form",
+      "blocks": {
+        "menu_8b7nQp": {
+          "type": "menu",
+          "settings": {
+            "menu": ""
+          }
+        },
+        "form_8xyJ87": {
+          "type": "form",
+          "settings": {
+            "heding": "we are glad to help",
+            "description": "<p>Our Client Advisors are ready to assist you. Fill in the below form and we will get back to you the soonest.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "menu_8b7nQp",
+        "form_8xyJ87"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "form",
-    "section_page_banner_76JBad"
+    "section_page_banner_76JBad",
+    "section_contact_form_VTf74U"
   ]
 }
