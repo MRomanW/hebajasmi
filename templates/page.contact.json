@@ -42,7 +42,7 @@
           "type": "form",
           "settings": {
             "heding": "we are glad to help",
-            "description": "<p>Our Client Advisors are ready to assist you. Fill in the below form and we will get back to you the soonest.<\/p>"
+            "description": "<p>Our Client Advisors are ready to assist you. <br\/>Fill in the below form and we will get back to you the soonest.<\/p>"
           }
         }
       },
