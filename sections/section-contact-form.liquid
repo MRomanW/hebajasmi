@@ -21,6 +21,37 @@
 {% schema %}
   {
     "name": "Contact form",
+    "blocks": [
+      {
+        "name": "Menu",
+        "type": "menu",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+          }
+        ]
+      },
+      {
+        "name": "Form",
+        "type": "form",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heding",
+            "label": "Heading",
+            "default": "we are glad to help"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description",
+            "default": "<p>Our Client Advisors are ready to assist you. Fill in the below form and we will get back to you the soonest.</p>"
+          }
+        ]
+      }
+    ],
     "settings": [
       {
         "type": "header",
