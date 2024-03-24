@@ -27,11 +27,27 @@
         "padding_top": 100,
         "padding_bottom": 100
       }
+    },
+    "custom_video_section_Uf8XnR": {
+      "type": "custom-video-section",
+      "settings": {
+        "heading": "the show",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify:\/\/shop_images\/cover_image.png",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "custom_hero_section_FpAkMv",
-    "custom_text_section_w3y8hK"
+    "custom_text_section_w3y8hK",
+    "custom_video_section_Uf8XnR"
   ]
 }
