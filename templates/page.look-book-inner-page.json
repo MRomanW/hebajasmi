@@ -57,6 +57,8 @@
         "image_G4zeWF": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/MOX_0445_copy_1_d75ec114-dbf9-4383-bdba-6950cf4b67ca.png",
+            "image_mobile": "shopify:\/\/shop_images\/MOX_0445_copy_1_d59f15e3-963a-4a4a-824c-3ef2b8572f94.png",
             "image_width": 40
           }
         }
@@ -66,8 +68,15 @@
         "image_G4zeWF"
       ],
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "custom_text_with_image_RzGw7m": {
+      "type": "custom-text-with-image",
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     }
   },
@@ -76,6 +85,7 @@
     "custom_hero_section_FpAkMv",
     "custom_text_section_w3y8hK",
     "custom_video_section_Uf8XnR",
-    "custom_text_with_image_7tffbz"
+    "custom_text_with_image_7tffbz",
+    "custom_text_with_image_RzGw7m"
   ]
 }
