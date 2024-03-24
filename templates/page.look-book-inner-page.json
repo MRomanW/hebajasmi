@@ -53,10 +53,17 @@
             "button_text": "Read more",
             "button_url": "#"
           }
+        },
+        "image_G4zeWF": {
+          "type": "image",
+          "settings": {
+            "image_width": 40
+          }
         }
       },
       "block_order": [
-        "text_EUp9V9"
+        "text_EUp9V9",
+        "image_G4zeWF"
       ],
       "settings": {
         "padding_top": 36,
