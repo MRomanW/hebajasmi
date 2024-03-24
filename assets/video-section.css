@@ -46,3 +46,20 @@
 .video-section__media.media-fit-cover video {
   object-fit: cover;
 }
+
+.custom-video h2 {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 5.8rem;
+}
+
+.custom-video .deferred-media__poster-button {
+  background-color: transparent !important;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-video h2 {
+    margin: 0 0 3.5rem;
+  }
+}
