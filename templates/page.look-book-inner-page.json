@@ -13,8 +13,8 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/hero_1.png",
         "image_mobile": "shopify:\/\/shop_images\/hero_1-mobile.png",
-        "heading": "spring\/summer 2024",
-        "text_url": "Discover more",
+        "heading": "",
+        "text_url": "",
         "link_url": "#",
         "padding_top": 0,
         "padding_bottom": 0
