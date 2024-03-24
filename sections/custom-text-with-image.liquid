@@ -14,8 +14,77 @@
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding">
+<div class="section-{{ section.id }}-padding custom-text-with-image">
+  <div class="page-width">
+    <div class="custom-text-with-image__wrapper"> 
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'image' -%}
+            <style>
+              .custom-text-with-image__image--{{ block.id }} {
+                flex-basis: {{ block.settings.image_width }}%;
+              }
+            </style>
 
+            <div class="custom-text-with-image__image custom-text-with-image__image--{{ block.id }}">
+              {% liquid
+                if block.settings.image_mobile != blank
+                  assign imageDesctop = 'custom-text-with-image__image--desktop'
+                endif
+              %}
+
+              {% if block.settings.image != blank %}
+                {{
+                  block.settings.image
+                  | image_url: width: 3200
+                  | image_tag:
+                    widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
+                    alt: block.settings.image.alt,
+                    class: imageDesctop
+                }}
+              {% endif %}
+
+              {% if block.settings.image_mobile != blank %}
+                {{
+                  block.settings.image_mobile
+                  | image_url: width: 3200
+                  | image_tag:
+                    widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
+                    alt: block.settings.image_mobile.alt,
+                    class: "custom-text-with-image__image--mobile"
+                }}
+              {% endif %}
+            </div>
+
+
+          {%- when 'text' -%}
+            <style>
+              .custom-text-with-image__text--{{ block.id }} {
+                text-align: {{ block.settings.alignment }};
+              }
+            </style>
+
+            <div class="custom-text-with-image__text custom-text-with-image__text--{{ block.id }}">
+              {% if block.settings.heading != blank %}
+                <h3 class="font-h2">{{ block.settings.heading }}</h3>
+              {% endif %}
+
+              {% if block.settings.description != blank %}
+                <div class="font-paragraph">
+                  {{ block.settings.description }}
+                </div>
+              {% endif %}
+              
+
+              {% if block.settings.button_text != blank %}
+                <a href="{{ block.settings.button_url }}">{{ block.settings.button_text }}</a>
+              {% endif %}
+            </div>
+            
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
 </div>
 
 {% schema %}
