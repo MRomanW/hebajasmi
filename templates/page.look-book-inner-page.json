@@ -48,6 +48,7 @@
         "text_EUp9V9": {
           "type": "text",
           "settings": {
+            "alignment": "center",
             "heading": "A DESERT ROSE",
             "description": "<p>In an enchanted medina, time drifts in the warm caress of a desert breeze. Labyrinthian alleyways promise marvelous encounters at every turn, gradually unfolding like the petals of a rare DESERT ROSE with mesmerizing beauty painted in the words of the hakawati.<\/p>",
             "button_text": "Read more",
@@ -74,6 +75,30 @@
     },
     "custom_text_with_image_RzGw7m": {
       "type": "custom-text-with-image",
+      "blocks": {
+        "image_XKKAag": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MOX_0445_copy_1_89bf59b0-eb2c-48db-888d-f222188db43f.png",
+            "image_mobile": "shopify:\/\/shop_images\/MOX_0445_copy_1_1c9d3641-0558-4475-b217-fcf6f327d11e.png",
+            "image_width": 40
+          }
+        },
+        "text_rzkdeq": {
+          "type": "text",
+          "settings": {
+            "alignment": "left",
+            "heading": "private viewing",
+            "description": "<p>Experience the collection with an online or in-person private consultation.<\/p>",
+            "button_text": "request an appointment",
+            "button_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "image_XKKAag",
+        "text_rzkdeq"
+      ],
       "settings": {
         "padding_top": 52,
         "padding_bottom": 52
