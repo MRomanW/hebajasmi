@@ -19,10 +19,19 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "custom_text_section_w3y8hK": {
+      "type": "custom-text-section",
+      "settings": {
+        "content": "<p>RELIVE THE SHOW<br\/>UNVEILED LIVE FROM PARIS<br\/>24.01.24<\/p>",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "custom_hero_section_FpAkMv"
+    "custom_hero_section_FpAkMv",
+    "custom_text_section_w3y8hK"
   ]
 }
