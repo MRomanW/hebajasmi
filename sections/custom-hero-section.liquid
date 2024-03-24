@@ -6,15 +6,78 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  {% if section.settings.image_mobile != blank %}
+    .custom-hero__image {
+      display: none;
+    }
+  {% endif %}
+
   @media screen and (min-width: 769px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+
+    .custom-hero__image--mobile {
+      display: none;
+    }
+
+    .custom-hero__image {
+      display: block;
+    }
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding">
+<div class="section-{{ section.id }}-padding custom-hero">
+
+  <div class="custom-hero__wrapper">
+    {% if section.settings.image != blank %}
+      <img
+        srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+          {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+          {%- if section.settings.image.width >= 533 -%}{{ section.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+          {%- if section.settings.image.width >= 720 -%}{{ section.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+          {%- if section.settings.image.width >= 1000 -%}{{ section.settings.image | image_url: width: 1000 }} 1000w,{%- endif -%}
+          {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+          {{ section.settings.image | image_url }} {{ section.settings.image.width }}w"
+        src="{{ section.settings.image | image_url: width: 150 }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        loading="lazy"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        class="custom-hero__image"
+      >
+    {% endif %}
+  
+    {% if section.settings.image_mobile != blank %}
+      <img
+        srcset="{%- if section.settings.image_mobile.width >= 165 -%}{{ section.settings.image_mobile | image_url: width: 165 }} 165w,{%- endif -%}
+          {%- if section.settings.image_mobile.width >= 360 -%}{{ section.settings.image_mobile | image_url: width: 360 }} 360w,{%- endif -%}
+          {%- if section.settings.image_mobile.width >= 533 -%}{{ section.settings.image_mobile | image_url: width: 533 }} 533w,{%- endif -%}
+          {%- if section.settings.image_mobile.width >= 720 -%}{{ section.settings.image_mobile | image_url: width: 720 }} 720w,{%- endif -%}
+          {%- if section.settings.image_mobile.width >= 1000 -%}{{ section.settings.image_mobile | image_url: width: 1000 }} 1000w,{%- endif -%}
+          {%- if section.settings.image_mobile.width >= 1500 -%}{{ section.settings.image_mobile | image_url: width: 1500 }} 1500w,{%- endif -%}
+          {{ section.settings.image_mobile | image_url }} {{ section.settings.image_mobile.width }}w"
+        src="{{ section.settings.image_mobile | image_url: width: 150 }}"
+        alt="{{ section.settings.image_mobile.alt | escape }}"
+        loading="lazy"
+        width="{{ section.settings.image_mobile.width }}"
+        height="{{ section.settings.image_mobile.height }}"
+        class="custom-hero__image--mobile"
+      >
+    {% endif %}
+
+    <div class="custom-hero__content">
+      {% if section.settings.heading != blank %}
+        <h2 class="font-h1">{{ section.settings.heading }}</h2>
+      {% endif %}
+    
+      {% if section.settings.text_url != blank %}
+        <a class="btn--white" href="{{ section.settings.link_url }}">{{ section.settings.text_url }}</a>
+      {% endif %}
+    </div>
+
+  </div>
 
 </div>
 

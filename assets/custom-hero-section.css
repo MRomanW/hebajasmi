@@ -1,0 +1,42 @@
+.custom-hero__wrapper {
+  display: flex;
+  position: relative;
+}
+
+.custom-hero__wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.custom-hero__content {
+  position: absolute;
+  bottom: 21%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-hero__content h2 {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.custom-hero__content a {
+  border: 1px solid #fff;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+} 
+
+@media screen and (max-width: 768px) {
+  .custom-hero__content {
+    bottom: 12%;
+  }
+
+  .custom-hero__content h2 {
+    letter-spacing: 1.2px;
+  }
+}
