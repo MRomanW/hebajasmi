@@ -13,16 +13,104 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/hero_1.png",
         "image_mobile": "shopify:\/\/shop_images\/hero_1-mobile.png",
-        "heading": "spring\/summer 2024",
-        "text_url": "Discover more",
+        "heading": "",
+        "text_url": "",
         "link_url": "#",
         "padding_top": 0,
         "padding_bottom": 0
+      }
+    },
+    "custom_text_section_w3y8hK": {
+      "type": "custom-text-section",
+      "settings": {
+        "content": "<p>RELIVE THE SHOW<br\/>UNVEILED LIVE FROM PARIS<br\/>24.01.24<\/p>",
+        "padding_top": 100,
+        "padding_bottom": 52
+      }
+    },
+    "custom_video_section_Uf8XnR": {
+      "type": "custom-video-section",
+      "settings": {
+        "heading": "the show",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify:\/\/shop_images\/cover_image.png",
+        "description": "",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 72
+      }
+    },
+    "custom_text_with_image_7tffbz": {
+      "type": "custom-text-with-image",
+      "blocks": {
+        "text_EUp9V9": {
+          "type": "text",
+          "settings": {
+            "alignment": "center",
+            "heading": "A DESERT ROSE",
+            "description": "<p>In an enchanted medina, time drifts in the warm caress of a desert breeze. Labyrinthian alleyways promise marvelous encounters at every turn, gradually unfolding like the petals of a rare DESERT ROSE with mesmerizing beauty painted in the words of the hakawati.<\/p>",
+            "button_text": "Read more",
+            "button_url": "#"
+          }
+        },
+        "image_G4zeWF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MOX_0445_copy_1_d75ec114-dbf9-4383-bdba-6950cf4b67ca.png",
+            "image_mobile": "shopify:\/\/shop_images\/MOX_0445_copy_1_d59f15e3-963a-4a4a-824c-3ef2b8572f94.png",
+            "image_width": 66
+          }
+        }
+      },
+      "block_order": [
+        "text_EUp9V9",
+        "image_G4zeWF"
+      ],
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "custom_text_with_image_RzGw7m": {
+      "type": "custom-text-with-image",
+      "blocks": {
+        "image_XKKAag": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MOX_0445_copy_1_89bf59b0-eb2c-48db-888d-f222188db43f.png",
+            "image_mobile": "shopify:\/\/shop_images\/MOX_0445_copy_1_1c9d3641-0558-4475-b217-fcf6f327d11e.png",
+            "image_width": 57
+          }
+        },
+        "text_rzkdeq": {
+          "type": "text",
+          "settings": {
+            "alignment": "left",
+            "heading": "private viewing",
+            "description": "<p>Experience the collection with an online or in-person private consultation.<\/p>",
+            "button_text": "request an appointment",
+            "button_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "image_XKKAag",
+        "text_rzkdeq"
+      ],
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "main",
-    "custom_hero_section_FpAkMv"
+    "custom_hero_section_FpAkMv",
+    "custom_text_section_w3y8hK",
+    "custom_video_section_Uf8XnR",
+    "custom_text_with_image_7tffbz",
+    "custom_text_with_image_RzGw7m"
   ]
 }
