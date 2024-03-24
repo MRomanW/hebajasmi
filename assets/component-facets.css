@@ -1223,5 +1223,28 @@ input.mobile-facets__checkbox {
   #product-grid {
     margin-top: 2.5rem; 
   }
+
+  .facets-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .facets {
+    width: fit-content;
+  }
+
+  .facet-filters {
+    padding: 0;
+  }
+
+  .facets__form {
+    display: flex;
+    margin: 0;
+  }
+
+  .active-facets {
+    width: fit-content;
+    flex: 1 1 auto;
+  }
 }
 
