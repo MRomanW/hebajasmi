@@ -25,7 +25,7 @@
       "settings": {
         "content": "<p>RELIVE THE SHOW<br\/>UNVEILED LIVE FROM PARIS<br\/>24.01.24<\/p>",
         "padding_top": 100,
-        "padding_bottom": 100
+        "padding_bottom": 52
       }
     },
     "custom_video_section_Uf8XnR": {
@@ -37,7 +37,7 @@
         "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "cover_image": "shopify:\/\/shop_images\/cover_image.png",
         "description": "",
-        "full_width": false,
+        "full_width": true,
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
