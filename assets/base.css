@@ -3522,3 +3522,7 @@ img {
   width: 100%;
   height: 100%;
 }
+
+.look-book-inner-page main {
+  background-color: #141414;
+}
