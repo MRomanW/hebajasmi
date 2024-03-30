@@ -1,0 +1,286 @@
+{{ 'custom-section-slider-collection-product.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding .full-width .swiper-button-prev,
+    .section-{{ section.id }}-padding .full-width .swiper-button-next {
+      display: none !important;
+    }
+
+    .section-{{ section.id }}-padding.collection-slider-product .full-width .swiper-slide img {
+      object-position: top;
+    }
+  }
+
+  {% if section.settings.width_page == 'container' %}
+    .section-{{ section.id }}-padding.collection-slider-product .page-width,
+    .section-{{ section.id }}-padding.collection-slider-product .swiper-container {
+      overflow: hidden;
+    } 
+  {% elsif section.settings.width_page == 'full_width' %}
+    .section-{{ section.id }}-padding.collection-slider-product .collection-slider-product__wrapper {
+      overflow: hidden;
+    } 
+  {% endif %}
+{%- endstyle -%}
+
+{% liquid
+  if section.settings.width_page == 'container' 
+    assign pageWidth = 'page-width'
+  elsif section.settings.width_page == 'full_width' 
+    assign pageWidth = 'full-width'
+  endif 
+%}
+
+<div class="section-{{ section.id }}-padding collection-slider-product">
+  <div class="{{ pageWidth }}">
+    {% if section.settings.heading != blank %}
+      <h2 class="font-h1">{{ section.settings.heading }}</h2>
+    {% endif %}
+    
+    {% if section.settings.description != blank %}
+      <div class="font-paragraph collection-slider-product__description">  
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+    
+
+    {% if section.settings.btn_view %}
+      <div class="collection-slider-product__view-btn">
+        <button class="view-btn__slider view-btn--active">
+          {% render 'icon-btn-slider' %}
+        </button>
+        <button class="view-btn__grid">
+          {% render 'icon-btn-grid' %}
+        </button>
+      </div>
+    {% endif %}
+    
+    <div class="collection-slider-product__wrapper">  
+      <div class="swiper-container swiper-container--{{ section.id }} collection-slider-product--slider">
+        <div class="swiper-wrapper">
+          {% for collection in section.settings.collection.products limit: 60 %}
+            <a href="{{ collection.url }}" class="swiper-slide">
+              {% if section.settings.count_product %}
+                <span class="font-h4">{{ forloop.index }}</span>
+              {% endif %}
+              
+              {{ 
+                collection.featured_image
+                | image_url: width: 732
+                | image_tag:
+                    widths: '183, 443, 732', 
+                    loading: 'lazy'
+              }} 
+            </a>
+          {%- endfor -%}
+        </div>
+        <div class="swiper-button-next collection-slider-product-next">
+          {% render 'icon-arrow-slider' %}
+        </div>
+        <div class="swiper-button-prev collection-slider-product-prev">
+          {% render 'icon-arrow-slider' %}
+        </div>
+      </div>
+
+      <div class="collection-slider-product__grid-wrapper">
+        <div class="collection-slider-product--grid collection-slider-product--grid--first">
+          {% for collection in section.settings.collection.products limit: 24 %}
+            <a href="{{ collection.url }}" class="collection-slider-product__grid">
+              {% if section.settings.count_product %}
+                <span class="font-h4">{{ forloop.index }}</span>
+              {% endif %}
+
+              {{ 
+                collection.featured_image
+                | image_url: width: 732
+                | image_tag:
+                    widths: '183, 443, 732', 
+                    loading: 'lazy'
+              }} 
+            </a>
+          {%- endfor -%}
+        </div>
+        
+        <button class="btn--white collection-slider-product--load-more">
+          Load More
+        </button>
+
+        <div class="collection-slider-product--grid collection-slider-product--grid--second">
+          {% for collection in section.settings.collection.products limit: 60 offset: 24 %}
+            <a href="{{ collection.url }}" class="collection-slider-product__grid">
+              {% assign count = forloop.index | plus: 24 %}
+              <span class="font-h4">{{ count }}</span>
+              {{ 
+                collection.featured_image
+                | image_url: width: 732
+                | image_tag:
+                    widths: '183, 443, 732', 
+                    loading: 'lazy'
+              }} 
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const swiper{{ section.id | split: "_" | last }} = new Swiper('.swiper-container--{{ section.id }}', {
+    centeredSlides: true,
+    loop: true,
+    speed: 500,
+    slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      {% if section.settings.width_page == 'container' %}
+        768: {
+          slidesPerView: 3,
+        },
+      {% elsif section.settings.width_page == 'full_width' %}
+        768: {
+          slidesPerView: 2.7,
+        },
+      {% endif %}
+    },
+  });
+
+  {% if section.settings.btn_view %}
+    document.addEventListener('DOMContentLoaded', function () {
+      const sliderButton = document.querySelector('.view-btn__slider');
+      const gridButton = document.querySelector('.view-btn__grid');
+      const sliderElement = document.querySelector('.collection-slider-product--slider');
+      const gridElement = document.querySelector('.collection-slider-product__grid-wrapper');
+      const loadMoreButton = document.querySelector('.collection-slider-product--load-more');
+      const secondGridElement = document.querySelector('.collection-slider-product--grid--second');
+  
+      sliderButton.addEventListener('click', function () {
+          if (!sliderButton.parentElement.classList.contains('view-btn--active')) {
+              sliderElement.style.display = 'block';
+              gridElement.style.display = 'none';
+              sliderButton.parentElement.classList.add('view-btn--active');
+              gridButton.parentElement.classList.remove('view-btn--active');
+              sliderButton.classList.add('view-btn--active');
+              gridButton.classList.remove('view-btn--active');
+          }
+      });
+  
+      gridButton.addEventListener('click', function () {
+          if (!gridButton.parentElement.classList.contains('view-btn--active')) {
+              sliderElement.style.display = 'none';
+              gridElement.style.display = 'block';
+              gridButton.parentElement.classList.add('view-btn--active');
+              sliderButton.parentElement.classList.remove('view-btn--active');
+              gridButton.classList.add('view-btn--active');
+              sliderButton.classList.remove('view-btn--active');
+          }
+      });
+  
+      loadMoreButton.addEventListener('click', function () {
+          secondGridElement.style.display = 'grid';
+          loadMoreButton.style.display = 'none';
+      });
+    });
+  {% endif %}
+</script>
+
+{% schema %}
+  {
+    "name": "t:sections.collection-slider.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "width_page",
+        "label": "Width page",
+        "options": [
+          {
+            "value": "container",
+            "label": "Container"
+          },
+          {
+            "value": "full_width",
+            "label": "Full width"
+          }
+        ],
+        "default": "container"
+      },
+      {
+        "type": "checkbox",
+        "id": "btn_view",
+        "label": "Switcher view",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "count_product",
+        "label": "Count product",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "the looks"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.collection-slider.presets"
+      }
+    ]
+  }
+{% endschema %}
+

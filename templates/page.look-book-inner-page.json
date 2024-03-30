@@ -42,6 +42,45 @@
         "padding_bottom": 72
       }
     },
+    "custom_section_slider_collection_product_HmN4py": {
+      "type": "custom-section-slider-collection-product",
+      "settings": {
+        "width_page": "container",
+        "btn_view": true,
+        "count_product": true,
+        "heading": "the looks",
+        "description": "",
+        "collection": "a-desert-rose-1",
+        "padding_top": 36,
+        "padding_bottom": 72
+      }
+    },
+    "custom_section_slider_collection_product_NkEbVw": {
+      "type": "custom-section-slider-collection-product",
+      "settings": {
+        "width_page": "full_width",
+        "btn_view": false,
+        "count_product": false,
+        "heading": "the details",
+        "description": "<p>Magic and allure whisper through HEBA JASMI, with lavish textures, sculpted lines and sultry breaths of Marrakesh, gradually unfolding like the petals of a rare DESERT ROSE.<\/p>",
+        "collection": "a-desert-rose-1",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "custom_section_slider_collection_product_KfdG9p": {
+      "type": "custom-section-slider-collection-product",
+      "settings": {
+        "width_page": "full_width",
+        "btn_view": false,
+        "count_product": false,
+        "heading": "BEHIND THE SCENES",
+        "description": "<p>The HEBA JASMI Haute Couture Spring\/Summer 2024 collection captivates the senses with a thousand and one secrets to share, inviting you to become part of its enchanted tales.<\/p>",
+        "collection": "a-desert-rose-1",
+        "padding_top": 72,
+        "padding_bottom": 36
+      }
+    },
     "custom_text_with_image_7tffbz": {
       "type": "custom-text-with-image",
       "blocks": {
@@ -110,6 +149,9 @@
     "custom_hero_section_FpAkMv",
     "custom_text_section_w3y8hK",
     "custom_video_section_Uf8XnR",
+    "custom_section_slider_collection_product_HmN4py",
+    "custom_section_slider_collection_product_NkEbVw",
+    "custom_section_slider_collection_product_KfdG9p",
     "custom_text_with_image_7tffbz",
     "custom_text_with_image_RzGw7m"
   ]
