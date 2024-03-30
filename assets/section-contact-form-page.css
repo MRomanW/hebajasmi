@@ -1,0 +1,43 @@
+.section-contact-page {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.section-contact-page__menu {
+  flex-basis: 20%;
+  flex: 0 0 auto;
+}
+
+.section-contact-page__menu .page-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.section-contact-page__menu .page-menu li {
+  padding: 0 4px;
+}
+
+.section-contact-page__menu .page-menu a {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.section-contact-page__menu .page-menu a:hover {
+  text-decoration: underline;
+}
+
+.section-contact-page__form {
+  flex-basis: 66%;
+}
+
+.contact-page__content h2 {
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 2rem;
+}
+
+.contact-page__content .font-paragraph {
+  color: #000;
+}

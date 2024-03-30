@@ -1,0 +1,20 @@
+.section-page-banner {
+  position: relative;
+}
+
+.section-page-banner h2 {
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 10;
+  top: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  .section-page-banner h2 {
+    top: 55%;
+    letter-spacing: 1.2px;
+  }
+}

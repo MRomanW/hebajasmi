@@ -246,7 +246,8 @@
     "contact": {
       "form": {
         "title": "Contact form",
-        "name": "Name",
+        "name": "First name",
+        "last_name": "Last name",
         "email": "Email",
         "phone": "Phone number",
         "comment": "Comment",
