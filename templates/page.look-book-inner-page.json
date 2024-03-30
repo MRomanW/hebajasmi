@@ -47,6 +47,7 @@
       "settings": {
         "width_page": "container",
         "btn_view": true,
+        "count_product": true,
         "heading": "the looks",
         "description": "",
         "collection": "a-desert-rose-1",
@@ -59,6 +60,7 @@
       "settings": {
         "width_page": "full_width",
         "btn_view": false,
+        "count_product": false,
         "heading": "the details",
         "description": "<p>Magic and allure whisper through HEBA JASMI, with lavish textures, sculpted lines and sultry breaths of Marrakesh, gradually unfolding like the petals of a rare DESERT ROSE.<\/p>",
         "collection": "a-desert-rose-1",
@@ -71,6 +73,7 @@
       "settings": {
         "width_page": "full_width",
         "btn_view": false,
+        "count_product": false,
         "heading": "BEHIND THE SCENES",
         "description": "<p>The HEBA JASMI Haute Couture Spring\/Summer 2024 collection captivates the senses with a thousand and one secrets to share, inviting you to become part of its enchanted tales.<\/p>",
         "collection": "a-desert-rose-1",
