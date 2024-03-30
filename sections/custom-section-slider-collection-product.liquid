@@ -12,22 +12,41 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {% if section.setings.width_page == 'container' %}
+    .section-{{ section.id }}-padding.collection-slider-product .page-width,
+    .section-{{ section.id }}-padding.collection-slider-product .swiper-container {
+      overflow: hidden;
+    } 
+  {% endif %}
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding collection-slider-product">
-  <div class="page-width">
-    {% if section.settings.heading != blank %}
-      <h2 class="font-h1">{{ section.settings.heading }}</h2>
-    {% endif %}
+{% liquid
+  if section.setings.width_page == 'container' 
+    assign pageWidth = 'page-width'
+  elsif section.setings.width_page == 'full_width' 
+    assign pageWidth = 'full-width'
+  endif 
+%}
 
-    <div class="collection-slider-product__view-btn">
-      <button class="view-btn__slider view-btn--active">
-        {% render 'icon-btn-slider' %}
-      </button>
-      <button class="view-btn__grid">
-        {% render 'icon-btn-grid' %}
-      </button>
-    </div>
+<div class="section-{{ section.id }}-padding collection-slider-product">
+  <div class="{{ pageWidth }}">
+    {% if section.settings.heading != blank %}
+      <h2 class="font-h1">{{ section.settings.heading }} {{section.setings.width_page  }}</h2>
+    {% endif %}
+    
+    {{ section.settings.description }}
+
+    {% if section.settings.btn_view %}
+      <div class="collection-slider-product__view-btn">
+        <button class="view-btn__slider view-btn--active">
+          {% render 'icon-btn-slider' %}
+        </button>
+        <button class="view-btn__grid">
+          {% render 'icon-btn-grid' %}
+        </button>
+      </div>
+    {% endif %}
     
     <div class="collection-slider-product__wrapper">  
       <div class="swiper-container swiper-container--{{ section.id }} collection-slider-product--slider">
@@ -107,47 +126,55 @@
       640: {
         slidesPerView: 2,
       },
-      768: {
-        slidesPerView: 3,
-      },
+      {% if section.setings.width_page == 'container' %}
+        768: {
+          slidesPerView: 3,
+        },
+      {% elsif section.setings.width_page == 'full_width' %}
+        768: {
+          slidesPerView: 2.7,
+        },
+      {% endif %}
     },
   });
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const sliderButton = document.querySelector('.view-btn__slider');
-    const gridButton = document.querySelector('.view-btn__grid');
-    const sliderElement = document.querySelector('.collection-slider-product--slider');
-    const gridElement = document.querySelector('.collection-slider-product__grid-wrapper');
-    const loadMoreButton = document.querySelector('.collection-slider-product--load-more');
-    const secondGridElement = document.querySelector('.collection-slider-product--grid--second');
-
-    sliderButton.addEventListener('click', function () {
-        if (!sliderButton.parentElement.classList.contains('view-btn--active')) {
-            sliderElement.style.display = 'block';
-            gridElement.style.display = 'none';
-            sliderButton.parentElement.classList.add('view-btn--active');
-            gridButton.parentElement.classList.remove('view-btn--active');
-            sliderButton.classList.add('view-btn--active');
-            gridButton.classList.remove('view-btn--active');
-        }
+  {% if section.settings.btn_view %}
+    document.addEventListener('DOMContentLoaded', function () {
+      const sliderButton = document.querySelector('.view-btn__slider');
+      const gridButton = document.querySelector('.view-btn__grid');
+      const sliderElement = document.querySelector('.collection-slider-product--slider');
+      const gridElement = document.querySelector('.collection-slider-product__grid-wrapper');
+      const loadMoreButton = document.querySelector('.collection-slider-product--load-more');
+      const secondGridElement = document.querySelector('.collection-slider-product--grid--second');
+  
+      sliderButton.addEventListener('click', function () {
+          if (!sliderButton.parentElement.classList.contains('view-btn--active')) {
+              sliderElement.style.display = 'block';
+              gridElement.style.display = 'none';
+              sliderButton.parentElement.classList.add('view-btn--active');
+              gridButton.parentElement.classList.remove('view-btn--active');
+              sliderButton.classList.add('view-btn--active');
+              gridButton.classList.remove('view-btn--active');
+          }
+      });
+  
+      gridButton.addEventListener('click', function () {
+          if (!gridButton.parentElement.classList.contains('view-btn--active')) {
+              sliderElement.style.display = 'none';
+              gridElement.style.display = 'block';
+              gridButton.parentElement.classList.add('view-btn--active');
+              sliderButton.parentElement.classList.remove('view-btn--active');
+              gridButton.classList.add('view-btn--active');
+              sliderButton.classList.remove('view-btn--active');
+          }
+      });
+  
+      loadMoreButton.addEventListener('click', function () {
+          secondGridElement.style.display = 'grid';
+          loadMoreButton.style.display = 'none';
+      });
     });
-
-    gridButton.addEventListener('click', function () {
-        if (!gridButton.parentElement.classList.contains('view-btn--active')) {
-            sliderElement.style.display = 'none';
-            gridElement.style.display = 'block';
-            gridButton.parentElement.classList.add('view-btn--active');
-            sliderButton.parentElement.classList.remove('view-btn--active');
-            gridButton.classList.add('view-btn--active');
-            sliderButton.classList.remove('view-btn--active');
-        }
-    });
-
-    loadMoreButton.addEventListener('click', function () {
-        secondGridElement.style.display = 'grid';
-        loadMoreButton.style.display = 'none';
-    });
-  });
+  {% endif %}
 </script>
 
 {% schema %}
@@ -155,10 +182,37 @@
     "name": "t:sections.collection-slider.name",
     "settings": [
       {
+        "type": "select",
+        "id": "width_page",
+        "label": "Width page",
+        "options": [
+          {
+            "value": "container",
+            "label": "Container"
+          },
+          {
+            "value": "full_width",
+            "label": "Full width"
+          }
+        ],
+        "default": "container"
+      },
+      {
+        "type": "checkbox",
+        "id": "btn_view",
+        "label": "Switcher view",
+        "default": true
+      },
+      {
         "type": "text",
         "id": "heading",
         "label": "Heading",
         "default": "the looks"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
       },
       {
         "type": "collection",

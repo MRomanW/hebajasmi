@@ -13,11 +13,6 @@
   padding: 0 1rem;
 }
 
-.collection-slider-product .page-width,
-.collection-slider-product .swiper-container {
-  overflow: hidden;
-}
-
 .collection-slider-product .swiper-container,
 .collection-slider-product--grid .collection-slider-product__grid {
   position: relative;
