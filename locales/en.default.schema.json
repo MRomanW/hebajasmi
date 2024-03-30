@@ -3349,6 +3349,10 @@
       "presets": {
         "name": "Collapsible content"
       }
+    },
+    "collection-slider": {
+      "name": "Featured collection slider",
+      "presets": "Featured collection slider"
     }
   }
 }
