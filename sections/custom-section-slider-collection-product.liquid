@@ -21,9 +21,18 @@ Template section
     {% if section.settings.heading != blank %}
       <h2 class="font-h1">{{ section.settings.heading }}</h2>
     {% endif %}
+
+    <div class="collection-slider-product__view-btn">
+      <button class="view-btn__slider view-btn--active">
+        {% render 'icon-btn-slider' %}
+      </button>
+      <button class="view-btn__grid">
+        {% render 'icon-btn-grid' %}
+      </button>
+    </div>
     
     <div class="collection-slider-product__wrapper">  
-      <div class="swiper-container swiper-container--{{ section.id }}">
+      <div class="swiper-container swiper-container--{{ section.id }} collection-slider-product--slider">
         <div class="swiper-wrapper">
           {% for collection in section.settings.collection.products limit: 60 %}
             <a href="{{ collection.url }}" class="swiper-slide">
@@ -44,7 +53,44 @@ Template section
         <div class="swiper-button-prev collection-slider-product-prev">
           {% render 'icon-arrow-slider' %}
         </div>
-    </div>
+      </div>
+
+      <div class="collection-slider-product__grid-wrapper">
+        <div class="collection-slider-product--grid collection-slider-product--grid--first">
+          {% for collection in section.settings.collection.products limit: 24 %}
+            <a href="{{ collection.url }}" class="collection-slider-product__grid">
+              <span class="font-h4">{{ forloop.index }}</span>
+              {{ 
+                collection.featured_image
+                | image_url: width: 732
+                | image_tag:
+                    widths: '183, 443, 732', 
+                    loading: 'lazy'
+              }} 
+            </a>
+          {%- endfor -%}
+        </div>
+        
+        <button class="btn--white collection-slider-product--load-more">
+          Load More
+        </button>
+
+        <div class="collection-slider-product--grid collection-slider-product--grid--second">
+          {% for collection in section.settings.collection.products limit: 60 offset: 24 %}
+            <a href="{{ collection.url }}" class="collection-slider-product__grid">
+              {% assign count = forloop.index | plus: 24 %}
+              <span class="font-h4">{{ count }}</span>
+              {{ 
+                collection.featured_image
+                | image_url: width: 732
+                | image_tag:
+                    widths: '183, 443, 732', 
+                    loading: 'lazy'
+              }} 
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -67,7 +113,43 @@ Template section
         slidesPerView: 3,
       },
     },
-});
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const sliderButton = document.querySelector('.view-btn__slider');
+    const gridButton = document.querySelector('.view-btn__grid');
+    const sliderElement = document.querySelector('.collection-slider-product--slider');
+    const gridElement = document.querySelector('.collection-slider-product__grid-wrapper');
+    const loadMoreButton = document.querySelector('.collection-slider-product--load-more');
+    const secondGridElement = document.querySelector('.collection-slider-product--grid--second');
+
+    sliderButton.addEventListener('click', function () {
+        if (!sliderButton.parentElement.classList.contains('view-btn--active')) {
+            sliderElement.style.display = 'block';
+            gridElement.style.display = 'none';
+            sliderButton.parentElement.classList.add('view-btn--active');
+            gridButton.parentElement.classList.remove('view-btn--active');
+            sliderButton.classList.add('view-btn--active');
+            gridButton.classList.remove('view-btn--active');
+        }
+    });
+
+    gridButton.addEventListener('click', function () {
+        if (!gridButton.parentElement.classList.contains('view-btn--active')) {
+            sliderElement.style.display = 'none';
+            gridElement.style.display = 'block';
+            gridButton.parentElement.classList.add('view-btn--active');
+            sliderButton.parentElement.classList.remove('view-btn--active');
+            gridButton.classList.add('view-btn--active');
+            sliderButton.classList.remove('view-btn--active');
+        }
+    });
+
+    loadMoreButton.addEventListener('click', function () {
+        secondGridElement.style.display = 'grid';
+        loadMoreButton.style.display = 'none';
+    });
+  });
 </script>
 
 {% schema %}
