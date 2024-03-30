@@ -16,9 +16,59 @@ Template section
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding">
-
+<div class="section-{{ section.id }}-padding collection-slider-product">
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <h2 class="font-h1">{{ section.settings.heading }}</h2>
+    {% endif %}
+    
+    <div class="collection-slider-product__wrapper">  
+      <div class="swiper-container swiper-container--{{ section.id }}">
+        <div class="swiper-wrapper">
+          {% for collection in section.settings.collection.products limit: 60 %}
+            <a href="{{ collection.url }}" class="swiper-slide">
+              <span class="font-h4">{{ forloop.index }}</span>
+              {{ 
+                collection.featured_image
+                | image_url: width: 732
+                | image_tag:
+                    widths: '183, 443, 732', 
+                    loading: 'lazy'
+              }} 
+            </a>
+          {%- endfor -%}
+        </div>
+        <div class="swiper-button-next collection-slider-product-next">
+          {% render 'icon-arrow-slider' %}
+        </div>
+        <div class="swiper-button-prev collection-slider-product-prev">
+          {% render 'icon-arrow-slider' %}
+        </div>
+    </div>
+    </div>
+  </div>
 </div>
+
+<script>
+  const swiper = new Swiper('.swiper-container--{{ section.id }}', {
+    centeredSlides: true,
+    loop: true,
+    speed: 500,
+    slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+    },
+});
+</script>
 
 {% schema %}
   {
