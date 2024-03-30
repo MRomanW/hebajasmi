@@ -131,8 +131,16 @@
   margin-top: 4rem;
 }
 
+.collection-slider-product__description {
+  max-width: 425px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 7rem;
+}
+
 @media screen and (max-width: 768px) {
-  .collection-slider-product .page-width {
+  .collection-slider-product .page-width,
+  .collection-slider-product .full-width {
     padding: 0 1.5rem;
   }
 
@@ -148,5 +156,19 @@
 
   .collection-slider-product--grid--second {
     margin-top: 1rem;
+  }
+
+  .collection-slider-product__description {
+    margin-bottom: 3rem;
+  }
+
+  .collection-slider-product .full-width .swiper-slide {
+    height: 372px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .collection-slider-product__description {
+    max-width: 272px;
   }
 }

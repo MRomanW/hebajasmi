@@ -13,18 +13,33 @@
     }
   }
 
-  {% if section.setings.width_page == 'container' %}
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding .full-width .swiper-button-prev,
+    .section-{{ section.id }}-padding .full-width .swiper-button-next {
+      display: none !important;
+    }
+
+    .section-{{ section.id }}-padding.collection-slider-product .full-width .swiper-slide img {
+      object-position: top;
+    }
+  }
+
+  {% if section.settings.width_page == 'container' %}
     .section-{{ section.id }}-padding.collection-slider-product .page-width,
     .section-{{ section.id }}-padding.collection-slider-product .swiper-container {
+      overflow: hidden;
+    } 
+  {% elsif section.settings.width_page == 'full_width' %}
+    .section-{{ section.id }}-padding.collection-slider-product .collection-slider-product__wrapper {
       overflow: hidden;
     } 
   {% endif %}
 {%- endstyle -%}
 
 {% liquid
-  if section.setings.width_page == 'container' 
+  if section.settings.width_page == 'container' 
     assign pageWidth = 'page-width'
-  elsif section.setings.width_page == 'full_width' 
+  elsif section.settings.width_page == 'full_width' 
     assign pageWidth = 'full-width'
   endif 
 %}
@@ -32,10 +47,15 @@
 <div class="section-{{ section.id }}-padding collection-slider-product">
   <div class="{{ pageWidth }}">
     {% if section.settings.heading != blank %}
-      <h2 class="font-h1">{{ section.settings.heading }} {{section.setings.width_page  }}</h2>
+      <h2 class="font-h1">{{ section.settings.heading }}</h2>
     {% endif %}
     
-    {{ section.settings.description }}
+    {% if section.settings.description != blank %}
+      <div class="font-paragraph collection-slider-product__description">  
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+    
 
     {% if section.settings.btn_view %}
       <div class="collection-slider-product__view-btn">
@@ -53,7 +73,10 @@
         <div class="swiper-wrapper">
           {% for collection in section.settings.collection.products limit: 60 %}
             <a href="{{ collection.url }}" class="swiper-slide">
-              <span class="font-h4">{{ forloop.index }}</span>
+              {% if section.settings.count_product %}
+                <span class="font-h4">{{ forloop.index }}</span>
+              {% endif %}
+              
               {{ 
                 collection.featured_image
                 | image_url: width: 732
@@ -76,7 +99,10 @@
         <div class="collection-slider-product--grid collection-slider-product--grid--first">
           {% for collection in section.settings.collection.products limit: 24 %}
             <a href="{{ collection.url }}" class="collection-slider-product__grid">
-              <span class="font-h4">{{ forloop.index }}</span>
+              {% if section.settings.count_product %}
+                <span class="font-h4">{{ forloop.index }}</span>
+              {% endif %}
+
               {{ 
                 collection.featured_image
                 | image_url: width: 732
@@ -113,7 +139,7 @@
 </div>
 
 <script>
-  const swiper = new Swiper('.swiper-container--{{ section.id }}', {
+  const swiper{{ section.id | split: "_" | last }} = new Swiper('.swiper-container--{{ section.id }}', {
     centeredSlides: true,
     loop: true,
     speed: 500,
@@ -126,11 +152,11 @@
       640: {
         slidesPerView: 2,
       },
-      {% if section.setings.width_page == 'container' %}
+      {% if section.settings.width_page == 'container' %}
         768: {
           slidesPerView: 3,
         },
-      {% elsif section.setings.width_page == 'full_width' %}
+      {% elsif section.settings.width_page == 'full_width' %}
         768: {
           slidesPerView: 2.7,
         },
@@ -202,6 +228,12 @@
         "id": "btn_view",
         "label": "Switcher view",
         "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "count_product",
+        "label": "Count product",
+        "default": false
       },
       {
         "type": "text",
