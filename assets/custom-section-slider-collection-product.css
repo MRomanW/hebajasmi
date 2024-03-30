@@ -134,3 +134,23 @@
   margin: auto;
   margin-top: 4rem;
 }
+
+@media screen and (max-width: 768px) {
+  .collection-slider-product .page-width {
+    padding: 0 1.5rem;
+  }
+
+  .collection-slider-product__view-btn {
+    margin-bottom: 2rem;
+  }
+
+  .collection-slider-product--grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+  }
+
+  .collection-slider-product--grid--second {
+    margin-top: 1rem;
+  }
+}
