@@ -1,0 +1,51 @@
+.product__title h1 {
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 3.1rem;
+}
+
+.product__info-container .price {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.product__info-container .price__regular {
+  font-family: "pp_editorial_newultralight", sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+.product__info-container variant-selects {
+  margin-top: 3.2rem;
+}
+
+.product__info-container .product-form__input {
+  margin: 0 0 1rem;
+}
+
+.product-form__input--pill input[type=radio]+label {
+  border-radius: 0;
+  min-width: 35px;
+  min-height: 21px;
+  padding: 9px;
+  font-size: 12px;
+}
+
+.product__info-container .product-form__submit {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px)  { 
+  .product__info-container .price__regular {
+    font-size: 1.4rem;
+  }
+}
+

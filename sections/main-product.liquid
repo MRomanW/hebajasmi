@@ -18,6 +18,8 @@
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
 
+  {{ 'custom-main-product.css' | asset_url | stylesheet_tag }}
+
   {%- style -%}
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -93,7 +95,7 @@
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1>{{ product.title | escape }}</h1>
+                  <h1 class="font-h1">{{ product.title | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
                       {{ product.title | escape }}
@@ -772,6 +774,26 @@
     </script>
   </div>
 </section>
+
+<script>
+  const sizeRadios = document.querySelectorAll('input[type="radio"][name="SIZE"]');
+
+  if(sizeRadios) {
+
+  sizeRadios.forEach(radio => {
+    radio.addEventListener('change', function() {
+        const selectedValue = this.value;
+        const legend = document.querySelector('.form__label--SIZE');
+
+        legend.textContent = 'SIZE: ';
+
+        const span = document.createElement('span');
+        span.textContent = selectedValue;
+        legend.appendChild(span);
+    });
+  });
+  }
+</script>
 
 {% schema %}
 {
