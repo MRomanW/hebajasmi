@@ -64,6 +64,7 @@
     },
     "custom_section_collection_slider_zE9APj": {
       "type": "custom-section-collection-slider",
+      "disabled": true,
       "settings": {
         "collection": "resort-2024",
         "products_to_show": 16,
@@ -77,6 +78,7 @@
         "collection_card_VnRtBN": {
           "type": "collection_card",
           "settings": {
+            "link": "",
             "image": "shopify:\/\/shop_images\/haute_couture.png",
             "heading": "haute couture"
           }
@@ -84,6 +86,7 @@
         "collection_card_gfPznD": {
           "type": "collection_card",
           "settings": {
+            "link": "",
             "image": "shopify:\/\/shop_images\/MOX_0518_insta.png",
             "heading": "bridal"
           }
@@ -91,6 +94,7 @@
         "collection_card_xp39tL": {
           "type": "collection_card",
           "settings": {
+            "link": "",
             "image": "shopify:\/\/shop_images\/MOX_0518_insta_3bb41259-3ea2-4ae3-b745-14cc91ead847.png",
             "heading": "ready to wear"
           }
