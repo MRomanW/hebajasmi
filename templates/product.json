@@ -26,13 +26,21 @@
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
+        },
+        "modal_4emB7b": {
+          "type": "modal",
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
         }
       },
       "block_order": [
         "title",
         "price",
         "variant_picker",
-        "buy_buttons"
+        "buy_buttons",
+        "modal_4emB7b"
       ],
       "settings": {
         "enable_sticky_info": true,
