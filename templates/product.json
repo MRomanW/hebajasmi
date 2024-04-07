@@ -33,6 +33,13 @@
             "title": "Description",
             "content": ""
           }
+        },
+        "modal_rc6rhB": {
+          "type": "modal",
+          "settings": {
+            "title": "delivery & returns",
+            "content": "<h4><strong>DELIVERY<\/strong><\/h4><p>Delivery within 5-10 working days with complimentary shipping only applicable to online orders. Please anticipate a slight delay during August 2023.<\/p><p>You may be required to pay additional import fees, taxes, brokerage fees, handling fees, and\/or other duties specific to the destination Country in order to receive your order. These additional fees cannot be collected by us, nor are they controlled in any way by our Online Store. Please remember that this is not the shipping fee: There are no additional shipping costs. <\/p><p>If your estimated delivery date doesn’t suit you, you have the option to select another date within 5 working days.<\/p><p>Where available, you’ll also be able to select a timed window to receive your order.<\/p><h4><strong>CARRIERS<\/strong><\/h4><p>DHL, UPS, TNT, FedEx, Royal Mail, Chronopost, Aramex<\/p><h4><strong>TAXES AND DUTIES<\/strong><\/h4><p>Taxes and duties are calculated according to your shipping destination and itemized on the Order Summary page. Make sure you select your location to view the estimated local market pricing and delivery times.<\/p><p>We ship to your destination on a DDU (Delivery Duty Unpaid) basis. This means that the prices displayed on site are exclusive of all taxes and duties. When your order arrives at Customs, you are responsible for paying all import duties, customs, and local sales taxes. <\/p><h4><strong>SHIPPING RESTRICTIONS<\/strong><\/h4><p>You can order ELIE SAAB fragrances with complimentary shipping within the US only. For other areas, we recommend you get in touch with our Customer Care team who will be happy to help you find an alternative point of purchase.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -40,7 +47,8 @@
         "price",
         "variant_picker",
         "buy_buttons",
-        "modal_4emB7b"
+        "modal_4emB7b",
+        "modal_rc6rhB"
       ],
       "settings": {
         "enable_sticky_info": true,
