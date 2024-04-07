@@ -639,6 +639,10 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+
+              {%- when 'modal' -%}
+                <button class="product-modal" id="{{ block.id }}">{{ block.settings.title }}</button>
+
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -775,24 +779,59 @@
   </div>
 </section>
 
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'modal' %}
+      {% render 'product-modal', block: block %}
+      
+  {%- endcase -%}
+{%- endfor -%}
+
 <script>
   const sizeRadios = document.querySelectorAll('input[type="radio"][name="SIZE"]');
 
   if(sizeRadios) {
+    sizeRadios.forEach(radio => {
+      radio.addEventListener('change', function() {
+          const selectedValue = this.value;
+          const legend = document.querySelector('.form__label--SIZE');
 
-  sizeRadios.forEach(radio => {
-    radio.addEventListener('change', function() {
-        const selectedValue = this.value;
-        const legend = document.querySelector('.form__label--SIZE');
+          legend.textContent = 'SIZE: ';
 
-        legend.textContent = 'SIZE: ';
+          const span = document.createElement('span');
+          span.textContent = selectedValue;
+          legend.appendChild(span);
+      });
+    });
+  }
 
-        const span = document.createElement('span');
-        span.textContent = selectedValue;
-        legend.appendChild(span);
+  const buttons = document.querySelectorAll('.product-modal');
+        
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      const buttonId = this.id;
+
+      const modalWrapper = document.querySelector(`.product-modal__wrapper--${buttonId}`);
+      modalWrapper.classList.add('product-modal__wrapper--active');
     });
   });
-  }
+
+  const overlays = document.querySelectorAll('.product-modal__overley');
+  const closeButtons = document.querySelectorAll('.product-modal-close');
+
+  overlays.forEach(overlay => {
+    overlay.addEventListener('click', function() {
+      const modalWrapper = this.closest('.product-modal__wrapper');
+      modalWrapper.classList.remove('product-modal__wrapper--active');
+    });
+  });
+
+  closeButtons.forEach(closeButton => {
+    closeButton.addEventListener('click', function() {
+      const modalWrapper = this.closest('.product-modal__wrapper');
+      modalWrapper.classList.remove('product-modal__wrapper--active');
+    });
+  });
 </script>
 
 {% schema %}
