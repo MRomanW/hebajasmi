@@ -61,6 +61,29 @@
           class="product-variant-id"
         >
 
+        {%- for option in product.options_with_values -%}
+          {%- for value in option.values -%}
+            {% if value == 'custom' or value == 'Custom'  %}
+              <div class="product-variant__custom-property" id="product-variant__custom-property">
+                <p class="line-item-property__field">
+                  <input placeholder="Item length (inches)" required class="required" id="item-length-inches" type="text" name="properties[Item length (inches)]">
+                </p>
+                <p class="line-item-property__field">
+                  <input placeholder="Chest (inches)" required class="required" id="chest-inches" type="text" name="properties[Chest (inches)]">
+                </p>
+    
+                <p class="line-item-property__field">
+                  <input placeholder="Hips (inches)" required class="required" id="hips-inches" type="text" name="properties[Hips (inches)]">
+                </p>
+    
+                <p class="line-item-property__field">
+                  <input placeholder="Sleeves from neck (inches)" required class="required" id="sleeves-from-neck-inches" type="text" name="properties[Sleeves from neck (inches)]">
+                </p>
+              </div>
+            {% endif %}
+          {%- endfor -%}
+        {% endfor %}
+
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
@@ -75,24 +98,30 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-          <button
-            id="ProductSubmitButton-{{ section_id }}"
-            type="submit"
-            name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
-              disabled
+          <div class="product-form__buttons__wrapper">
+            <button
+              id="ProductSubmitButton-{{ section_id }}"
+              type="submit"
+              name="add"
+              class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+              {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+                disabled
+              {% endif %}
+            >
+              <span>
+                {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- else -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                {%- endif -%}
+              </span>
+              {%- render 'loading-spinner' -%}
+            </button>
+            {% if block.settings.text_link_btn != blank %}
+              <a class="btn--white" href="{{ block.settings.url_link_btn }}">{{ block.settings.text_link_btn }}</a>
             {% endif %}
-          >
-            <span>
-              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
-              {%- endif -%}
-            </span>
-            {%- render 'loading-spinner' -%}
-          </button>
+          </div>
+          
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}

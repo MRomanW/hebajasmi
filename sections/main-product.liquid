@@ -832,6 +832,32 @@
       modalWrapper.classList.remove('product-modal__wrapper--active');
     });
   });
+
+
+  const radioButtons = document.getElementsByName("SIZE");
+
+  const customPropertyElement = document.getElementById("product-variant__custom-property");
+  const inputsToClear = document.querySelectorAll(".product-variant__custom-property input[type='text']");
+
+
+  if (customPropertyElement) {
+    radioButtons.forEach(function(radioButton) {
+      if (radioButton.value === "custom" && radioButton.checked) {
+        customPropertyElement.classList.add("product-variant__custom-property--active");
+      }
+    
+      radioButton.addEventListener("change", function() {
+        if (this.value === "custom" && this.checked) {
+            customPropertyElement.classList.add("product-variant__custom-property--active");
+        } else {
+          customPropertyElement.classList.remove("product-variant__custom-property--active");
+          inputsToClear.forEach(function(input) {
+            input.value = '';
+          });
+        }
+      });
+    });
+  }
 </script>
 
 {% schema %}
@@ -1027,6 +1053,21 @@
       "name": "t:sections.main-product.blocks.buy_buttons.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "header",
+          "content": "Cutom link button"
+        },
+        {
+          "type": "text",
+          "id": "text_link_btn",
+          "label": "Text link button",
+          "default": "book appointment"
+        },
+        {
+          "type": "url",
+          "id": "url_link_btn",
+          "label": "Url link button"
+        },
         {
           "type": "checkbox",
           "id": "show_dynamic_checkout",

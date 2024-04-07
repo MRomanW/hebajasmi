@@ -118,6 +118,49 @@
   border: none;
 }
 
+.product-form__buttons {
+  max-width: 100%;
+}
+
+.product-form__buttons__wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.6rem;
+}
+
+.product-form__buttons__wrapper .btn--white {
+  border: 1px solid #000;
+  color: #000;
+  height: fit-content;
+  display: block;
+  width: 100%;
+  text-align: center;
+  min-height: 45px;
+}
+
+.product-variant__custom-property {
+  margin: 4rem 0;
+  display: none;
+}
+
+.product-variant__custom-property.product-variant__custom-property--active {
+  display: block;
+}
+
+.product-variant__custom-property input {
+  border: none;
+  border-bottom: 1px solid #000;
+  max-width: 340px;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 110%;
+  letter-spacing: 0;
+  color: #3B3B3B;
+  padding: 14px 0;
+}
+
 @media screen and (max-width: 768px)  { 
   .product__info-container .price__regular {
     font-size: 1.4rem;
