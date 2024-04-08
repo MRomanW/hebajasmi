@@ -1,0 +1,15 @@
+<div class="product-modal__wrapper product-modal__wrapper--{{ block.id }}">
+  <div class="product-modal__overley"></div>
+  <div class="product-modal__container">
+    {% if block.settings.title != blank %}
+      <h2 class="product-modal__title">{{ block.settings.title }}  <button class="product-modal-close">{% render 'icon-cross' %}</button></h2>
+    {% endif %}
+    <div class="product-modal__content">
+      {% if block.settings.content != blank %}
+        {{ block.settings.content }}
+      {% else %}
+        {{ product.description }}
+      {% endif %}
+    </div>
+  </div>
+</div>
