@@ -17,10 +17,20 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "section_custom_code_FiCtmp": {
+      "type": "section-custom-code",
+      "settings": {
+        "content": "<p>For more than 40 years, HEBAJASMI has been weaving a world of elegance and luxury enhancing femininity and craftsmanship. The HEBAJASMI experience is a journey of learning, excellence, and artistry. We thrive on collaboration and teamwork and invest in innovative ways to make our creations available to as many people as possible. We at HEBAJASMI are entrusted with a legacy that we invite you to explore.<\/p>",
+        "code": "",
+        "padding_top": 100,
+        "padding_bottom": 140
+      }
     }
   },
   "order": [
     "main",
-    "section_page_banner_xanNie"
+    "section_page_banner_xanNie",
+    "section_custom_code_FiCtmp"
   ]
 }
