@@ -85,7 +85,7 @@
             {%- if cart != empty -%}
               <div class="drawer__cart-items-wrapper">
                 <table class="cart-items" role="table">
-                  <thead role="rowgroup">
+                  {% comment %} <thead role="rowgroup">
                     <tr role="row">
                       <th id="CartDrawer-ColumnProductImage" role="columnheader">
                         <span class="visually-hidden">{{ 'sections.cart.headings.image' | t }}</span>
@@ -110,7 +110,7 @@
                         <span class="visually-hidden">{{ 'sections.cart.headings.quantity' | t }}</span>
                       </th>
                     </tr>
-                  </thead>
+                  </thead> {% endcomment %}
 
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
@@ -218,9 +218,26 @@
                           </ul>
                         </td>
 
+
+                        <td>
+                          <cart-remove-button
+                            id="CartDrawer-Remove-{{ item.index | plus: 1 }}"
+                            data-index="{{ item.index | plus: 1 }}"
+                          >
+                            <button
+                              type="button"
+                              class="button button--tertiary cart-remove-button"
+                              aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+                              data-variant-id="{{ item.variant.id }}"
+                            >
+                              {% render 'icon-cross' %}
+                            </button>
+                          </cart-remove-button>
+                        </td>
+                       
                         <td class="cart-item__totals right" role="cell" headers="CartDrawer-ColumnTotal">
                           {%- render 'loading-spinner' -%}
-                          <div class="cart-item__price-wrapper">
+                          {% comment %} <div class="cart-item__price-wrapper">
                             {%- if item.original_line_price != item.final_line_price -%}
                               <div class="cart-item__discounted-prices">
                                 <span class="visually-hidden">
@@ -256,7 +273,7 @@
                                 {{ item.unit_price_measurement.reference_unit }}
                               </div>
                             {%- endif -%}
-                          </div>
+                          </div> {% endcomment %}
                         </td>
                         {%- liquid
                           assign has_qty_rules = false
@@ -318,7 +335,7 @@
                                   </button>
                                 </quantity-input>
                               </div>
-                              <cart-remove-button
+                              {% comment %} <cart-remove-button
                                 id="CartDrawer-Remove-{{ item.index | plus: 1 }}"
                                 data-index="{{ item.index | plus: 1 }}"
                               >
@@ -330,7 +347,7 @@
                                 >
                                   {% render 'icon-remove' %}
                                 </button>
-                              </cart-remove-button>
+                              </cart-remove-button> {% endcomment %}
                             </div>
                             {%- if has_qty_rules or has_vol_pricing -%}
                               <button
@@ -490,18 +507,6 @@
             <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
             <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
           </div>
-
-          <small class="tax-note caption-large rte">
-            {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-              {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
-            {%- elsif cart.taxes_included -%}
-              {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
-            {%- elsif shop.shipping_policy.body != blank -%}
-              {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
-            {%- else -%}
-              {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
-            {%- endif -%}
-          </small>
         </div>
 
         <!-- CTAs -->
@@ -526,6 +531,8 @@
             {{ 'sections.cart.checkout' | t }}
           </button>
         </div>
+
+        <a class="cart__ctas__link-cart" href="{{ routes.cart_url }}">{{ 'sections.cart.view_cart' | t }}</a>
       </div>
     </div>
   </div>
