@@ -17,9 +17,9 @@
 
 .drawer__inner {
   height: 100%;
-  width: 40rem;
+  width: 64.6rem;
   max-width: calc(100vw - 3rem);
-  padding: 0 1.5rem;
+  padding: 3.2rem 3.2rem;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
   border-right: 0;
   overflow: hidden;
@@ -111,7 +111,6 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 }
 
 .drawer__footer {
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.2);
   padding: 1.5rem 0;
 }
 
@@ -212,9 +211,15 @@ cart-drawer-items {
 
 .cart-drawer .cart-item__media {
   grid-row: 1 / 3;
+  width: 280px;
 }
 
 .cart-drawer .cart-item__image {
+  width: 280px;
+  height: 242px;
+  aspect-ratio: 1.1;
+  object-fit: cover;
+  object-position: top;
   max-width: 100%;
 }
 
@@ -401,5 +406,88 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
 
   .cart-drawer .cart-item__error {
     margin-left: 0;
+  }
+}
+
+.cart-drawer__form .cart-item__quantity {
+  display: none;
+}
+
+.drawer__heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 110%;
+  color: #000;
+}
+
+.cart-drawer__form .cart-item__name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 110%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.cart-drawer__form .cart-item__details {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+.cart-drawer__footer .totals__total,
+.cart-drawer__footer .totals__total-value {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  line-height: 110%;
+  font-size: 1.8rem;
+}
+
+.cart-drawer .cart-item cart-remove-button svg {
+  width: 1.2rem;
+}
+
+.cart-drawer__footer .totals {
+  margin-bottom: 3.2rem;
+}
+
+.cart-drawer .cart__checkout-button,
+.cart-drawer__footer  .cart__checkout-button.button {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+
+.cart-drawer .cart-item cart-remove-button,
+cart-remove-button .button {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.cart__ctas__link-cart {
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 1.4rem;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-top: 3.2rem;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .drawer__inner {
+    padding: 1.1em;
+  }
+
+  .cart-drawer .cart-item__media {
+    width: 117px;
+  }
+
+  .cart-drawer .cart-item__image {
+    height: 132px;
   }
 }
