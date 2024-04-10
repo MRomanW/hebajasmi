@@ -2,13 +2,35 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "section_page_banner_xanNie": {
+      "type": "section-page-banner",
+      "settings": {
+        "heding": "careers",
+        "image": "shopify:\/\/shop_images\/careers.png",
+        "mobile_image": "shopify:\/\/shop_images\/MOX_0445_copy_1_cd2348e5-257f-4ce4-ae6b-b95cd5db1dee.png",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_custom_code_FiCtmp": {
+      "type": "section-custom-code",
+      "settings": {
+        "content": "<p>For <strong>more than<\/strong> 40 years, HEBAJASMI has been weaving a world of elegance and luxury enhancing femininity and craftsmanship. The HEBAJASMI experience is a journey of learning, excellence, and artistry. We thrive on collaboration and teamwork and invest in innovative ways to make our creations available to as many people as possible. We at HEBAJASMI are entrusted with a legacy that we invite you to explore.<\/p>",
+        "code": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"laAMA-6jJ1-JrS9N8TqYwg\"><\/div>",
+        "padding_top": 100,
+        "padding_bottom": 140
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "section_page_banner_xanNie",
+    "section_custom_code_FiCtmp"
   ]
 }
