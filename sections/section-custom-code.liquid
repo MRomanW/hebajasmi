@@ -1,5 +1,3 @@
-Template section
-
 {{ 'section-custom-code.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
@@ -14,10 +12,26 @@ Template section
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .form-control {
+    background: red !important;
+  }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding">
+<div class="section-{{ section.id }}-padding section-custom-code">
+  <div class="page-width">
+    {% if section.settings.content != blank %}
+      <div class="section-custom-code__content font-paragraph">
+        {{ section.settings.content }}
+      </div>
+    {% endif %}
 
+    {% if section.settings.code != blank %}
+      <div class="section-custom-code__code">
+        {{ section.settings.code }}
+      </div>
+    {% endif %}
+  </div>
 </div>
 
 {% schema %}
