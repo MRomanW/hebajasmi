@@ -506,3 +506,10 @@
     font-size: 1.2rem;
   }
 }
+
+.template--cart {
+  max-width: 1222px;
+  margin: auto;
+  padding: 0 1.6rem;
+  display: flex;
+}
