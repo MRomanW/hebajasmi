@@ -12,10 +12,28 @@
             "heading": "WORLDWIDE shipping",
             "description": "<p>Benefit from worldwide shipping and extended returns<\/p>"
           }
+        },
+        "item_tw3hTT": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/person.svg",
+            "heading": "private session",
+            "description": "<p>Book an online or in-person appointment with your trusted Fashion Advisor<\/p>"
+          }
+        },
+        "item_iLNtgc": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/bag.svg",
+            "heading": "click & collect",
+            "description": "<p>You can now order your item online and pick it up from your nearest Boutique<\/p>"
+          }
         }
       },
       "block_order": [
-        "item_ALAqnV"
+        "item_ALAqnV",
+        "item_tw3hTT",
+        "item_iLNtgc"
       ],
       "settings": {
         "padding_top": 36,
