@@ -1,0 +1,49 @@
+.custom-block-icon__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.custom-block-icon__item {
+  flex-basis: 31%;
+}
+
+.custom-block-icon__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: block;
+  margin: auto;
+  margin-bottom: 2.6rem;
+}
+
+.custom-block-icon__item h5 {
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+  margin-bottom: 1.4rem;
+}
+
+.custom-block-icon__description {
+  text-align: center;
+  color: #000;
+}
+
+.custom-block-icon__description p {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-block-icon__wrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .custom-block-icon__item {
+    flex-basis: 100%;
+  }
+
+  .custom-block-icon__item h5 {
+    margin-bottom: 1rem;
+  }
+}
