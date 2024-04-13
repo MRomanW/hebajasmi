@@ -1,0 +1,107 @@
+{{ 'custom-footer.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding custom-footer">
+  <div class="page-width">
+    
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Custom footer",
+    "blocks": [
+      {
+        "type": "newslatter",
+        "name": "Newslatter"
+      },
+      {
+        "type": "menu",
+        "name": "Menu",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "menu_1",
+            "label": "Menu #1"
+          },
+          {
+            "type": "link_list",
+            "id": "menu_2",
+            "label": "Menu #2"
+          },
+          {
+            "type": "link_list",
+            "id": "menu_3",
+            "label": "Menu #3"
+          },
+          {
+            "type": "link_list",
+            "id": "menu_4",
+            "label": "Menu #4"
+          }
+        ]
+      },
+      {
+        "type": "logo",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu_footer",
+        "label": "Menu footer"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom footer"
+      }
+    ]
+  }
+{% endschema %}
+
