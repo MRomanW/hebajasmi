@@ -42,7 +42,30 @@
     },
     "footer": {
       "type": "custom-footer",
+      "blocks": {
+        "newslatter_bw4nYY": {
+          "type": "newslatter",
+          "settings": {
+            "newsletter_heading": "newsletter",
+            "description": "<p>You may unsubscribe at any time. To find out more, please visit our Privacy Policy.<\/p>"
+          }
+        },
+        "menu_Ld98Tn": {
+          "type": "menu",
+          "settings": {
+            "menu_1": "explore",
+            "menu_2": "customer-care",
+            "menu_3": "the-company",
+            "menu_4": "boutique-services"
+          }
+        }
+      },
+      "block_order": [
+        "newslatter_bw4nYY",
+        "menu_Ld98Tn"
+      ],
       "settings": {
+        "menu_footer": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
