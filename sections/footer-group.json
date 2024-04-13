@@ -58,11 +58,17 @@
             "menu_3": "the-company",
             "menu_4": "boutique-services"
           }
+        },
+        "logo_mbjW6H": {
+          "type": "logo",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "newslatter_bw4nYY",
-        "menu_Ld98Tn"
+        "menu_Ld98Tn",
+        "logo_mbjW6H"
       ],
       "settings": {
         "menu_footer": "",
