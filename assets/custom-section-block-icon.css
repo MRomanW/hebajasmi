@@ -1,12 +1,11 @@
 .custom-block-icon__wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 3.3rem;
   justify-content: space-between;
 }
 
 .custom-block-icon__item {
-  flex-basis: calc(93% / 3);
+  flex-basis: 31%;
 }
 
 .custom-block-icon__icon {
@@ -32,4 +31,19 @@
 
 .custom-block-icon__description p {
   margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-block-icon__wrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .custom-block-icon__item {
+    flex-basis: 100%;
+  }
+
+  .custom-block-icon__item h5 {
+    margin-bottom: 1rem;
+  }
 }
