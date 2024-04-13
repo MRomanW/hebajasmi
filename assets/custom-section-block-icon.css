@@ -1,0 +1,35 @@
+.custom-block-icon__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.3rem;
+  justify-content: space-between;
+}
+
+.custom-block-icon__item {
+  flex-basis: calc(93% / 3);
+}
+
+.custom-block-icon__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: block;
+  margin: auto;
+  margin-bottom: 2.6rem;
+}
+
+.custom-block-icon__item h5 {
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+  margin-bottom: 1.4rem;
+}
+
+.custom-block-icon__description {
+  text-align: center;
+  color: #000;
+}
+
+.custom-block-icon__description p {
+  margin: 0;
+}
