@@ -1,0 +1,50 @@
+.custom-footer {
+  background-color: #F8F8F8;
+}
+
+.footer-block__newsletter {
+  max-width: 408px;
+}
+
+.footer-block__newsletter .footer-block__heading {
+  font-size: 1.8rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 110%;
+  margin-bottom: 3.8rem;
+}
+
+.footer-block__newsletter input {
+  border: none;
+  border-bottom: 1px solid #000;
+  background-color: transparent;
+  padding-left: 0;
+}
+
+
+.footer-block__newsletter label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 175%;
+  letter-spacing: 0;
+  left: 3px;
+} 
+
+.newsletter-form__field-wrapper .field:after {
+  content: none;
+}
+
+.newsletter-form__field-wrapper .newsletter-form__button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.footer-block__newsletter-description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 110%;
+  letter-spacing: 0;
+}

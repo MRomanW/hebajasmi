@@ -60,7 +60,7 @@
                         id="Subscribe"
                         aria-label="{{ 'newsletter.button_label' | t }}"
                       >
-                        {% render 'icon-arrow' %}
+                        {% render 'icon-arrow-custom' %}
                       </button>
                     </div>
                     {%- if form.errors -%}
@@ -85,8 +85,9 @@
                 {%- endform -%}
 
                 {% if block.settings.description != blank %}
-                  <div class="footer-block__newsletter-description"></div>
-                  {{ block.settings.description }}
+                  <div class="footer-block__newsletter-description">
+                    {{ block.settings.description }}
+                  </div>
                 {% endif %}
               </div>
             </div>
@@ -139,6 +140,10 @@
             
         {%- endcase -%}
       {%- endfor -%}
+    </div>
+
+    <div class="custom-footer__bottom">
+      
     </div>
   </div>
 </div>
