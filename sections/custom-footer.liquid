@@ -145,7 +145,24 @@
     </div>
 
     <div class="custom-footer__bottom">
+      {% if section.settings.menu_footer != blank %}
+        <div class="custom-footer-bottom__menu">
+          <ul>
+            {%- for link in section.settings.menu_footer.links -%}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {% endif %}
       
+      <div class="custom-footer-bottom__copy">
+        <p>&copy;{{ shop.name | link_to: routes.root_url }} {{ 'now' | date: '%Y' }}</p>
+      </div>
+
+      <div class="custom-footer-bottom__social">
+        {%- render 'social-icons' -%}
+      </div>
+
     </div>
   </div>
 </div>
