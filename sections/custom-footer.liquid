@@ -83,48 +83,56 @@
               {% if block.settings.menu_1 != blank %}
                 <ul class="custom-footer__menu-item">
                   {% if block.settings.heading_1 != blank %}
-                    <h5>{{ block.settings.heading_1 }}</h5>
+                    <h5>{{ block.settings.heading_1 }} <span class="custom-footer__arrow">{% render 'icon-arrow-custom' %}</span></h5>
                   {% endif %}
                   
-                  {%- for link in block.settings.menu_1.links -%}
-                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                  {%- endfor -%}
+                  <div class="custom-footer__menu-list">
+                    {%- for link in block.settings.menu_1.links -%}
+                      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {%- endfor -%}
+                  </div>
                 </ul>
               {% endif %}
 
               {% if block.settings.menu_2 != blank %}
                 <ul class="custom-footer__menu-item">
                   {% if block.settings.heading_2 != blank %}
-                    <h5>{{ block.settings.heading_2 }}</h5>
+                    <h5>{{ block.settings.heading_2 }} <span class="custom-footer__arrow">{% render 'icon-arrow-custom' %}</span></h5>
                   {% endif %}
 
-                  {%- for link in block.settings.menu_2.links -%}
-                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                  {%- endfor -%}
+                  <div class="custom-footer__menu-list">
+                    {%- for link in block.settings.menu_2.links -%}
+                      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {%- endfor -%}
+                  </div>
                 </ul>
               {% endif %}
 
               {% if block.settings.menu_3 != blank %}
                 <ul class="custom-footer__menu-item">
                   {% if block.settings.heading_3 != blank %}
-                    <h5>{{ block.settings.heading_3 }}</h5>
+                    <h5>{{ block.settings.heading_3 }} <span class="custom-footer__arrow">{% render 'icon-arrow-custom' %}</span></h5>
                   {% endif %}
 
-                  {%- for link in block.settings.menu_3.links -%}
-                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                  {%- endfor -%}
+                  <div class="custom-footer__menu-list">
+                    {%- for link in block.settings.menu_3.links -%}
+                      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {%- endfor -%}
+                  </div>
                 </ul>
               {% endif %}
 
               {% if block.settings.menu_4 != blank %}
                 <ul class="custom-footer__menu-item">
                   {% if block.settings.heading_4 != blank %}
-                    <h5>{{ block.settings.heading_4 }}</h5>
+                    <h5>{{ block.settings.heading_4 }} <span class="custom-footer__arrow">{% render 'icon-arrow-custom' %}</span></h5>
                   {% endif %}
 
-                  {%- for link in block.settings.menu_4.links -%}
-                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                  {%- endfor -%}
+                  <div class="custom-footer__menu-list">
+                    {%- for link in block.settings.menu_4.links -%}
+                      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {%- endfor -%}
+                  </div>
                 </ul>
               {% endif %}
             </div>
@@ -166,6 +174,28 @@
     </div>
   </div>
 </div>
+
+<script>
+  function toggleMenu() {
+    let menuList = this.nextElementSibling;
+    menuList.classList.toggle('active');
+
+    if (menuList.classList.contains('active')) {
+      let menuHeight = menuList.scrollHeight + 'px';
+      menuList.style.height = menuHeight;
+      this.classList.add('active'); 
+    } else {
+      menuList.style.height = '0px';
+      this.classList.remove('active'); 
+    }
+  }
+
+  let h5Elements = document.querySelectorAll('.custom-footer__menu-item h5');
+
+  h5Elements.forEach(function(h5Element) {
+    h5Element.addEventListener('click', toggleMenu);
+  });
+</script>
 
 {% schema %}
   {
