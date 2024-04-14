@@ -1,5 +1,11 @@
 .custom-footer {
+  padding-top: 6rem;
+  padding-bottom: 3.6rem;
   background-color: #F8F8F8;
+}
+
+.custom-footer__newslatter {
+  margin-bottom: 6rem;
 }
 
 .footer-block__newsletter {
@@ -12,6 +18,8 @@
   text-transform: uppercase;
   color: #000;
   line-height: 110%;
+  letter-spacing: 0;
+  margin: 0;
   margin-bottom: 3.8rem;
 }
 
@@ -47,4 +55,51 @@
   font-size: 1.4rem;
   line-height: 110%;
   letter-spacing: 0;
+}
+
+.custom-footer__menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.custom-footer__menu-wrapper .custom-footer__menu-item {
+  padding: 0;
+  list-style: none;
+}
+
+.custom-footer__menu-wrapper .custom-footer__menu-item h5 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  line-height: 110%;
+  color: #000;
+  margin: 0;
+  margin-bottom: 2.8rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.custom-footer__menu-wrapper .custom-footer__menu-item li {
+  line-height: 26px;
+}
+
+.custom-footer__menu-wrapper .custom-footer__menu-item li a {
+  letter-spacing: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  line-height: 100%;
+  text-decoration: none;
+}
+
+.custom-footer__menu-wrapper .custom-footer__menu-item li a:hover {
+  text-decoration: underline;
+}
+
+.custom-footer__logo {
+  max-width: 386px;
+  margin: auto;
 }
