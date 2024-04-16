@@ -1,0 +1,4 @@
+.template--cart thead,
+.template--cart .cart-item__quantity {
+  display: none;
+}
