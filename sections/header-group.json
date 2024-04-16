@@ -4,8 +4,23 @@
   "sections": {
     "header": {
       "type": "header",
+      "blocks": {
+        "banner_qJVRmh": {
+          "type": "banner",
+          "settings": {
+            "trigger_menu_item": "haute couture",
+            "image": "shopify:\/\/shop_images\/image_1_3b9f1d74-8f45-4dff-976a-975beb8f8d5c.png",
+            "text": "Spring\/Summer 2024",
+            "text_link": "discover more",
+            "url_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "banner_qJVRmh"
+      ],
       "settings": {
-        "logo_position": "middle-left",
+        "logo_position": "top-center",
         "menu": "main-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
