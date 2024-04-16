@@ -18,7 +18,7 @@
 
 .mega-menu__link--level-2 {
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 500 !important;
   font-size: 1.4rem;
   line-height: 100%;
   letter-spacing: 0;
@@ -34,12 +34,14 @@
   font-size: 1.4rem;
   line-height: 110%;
   letter-spacing: 0;
+  color: #000;
 }
 
 .mega-menu__list .mega-menu__link span {
   font-size: 12px;
   color: #333333;
   display: block;
+  margin-top: 8px;
 }
 
 .header--top-center .mega-menu__list>li {
@@ -52,8 +54,43 @@
 
 .mega-menu__content {
   padding-top: 7rem;
+  padding-bottom: 11rem;
 }
 
 .header--top-center .mega-menu__list.page-width {
   padding: 0 4.5rem;
+}
+
+.mega-menu__content__banner {
+  margin-left: auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.mega-menu__content__banner {
+  width: min-content;
+}
+
+.mega-menu__content__banner-image {
+  width: 240px;
+}
+
+.mega-menu__content__banner-image img {
+  margin-bottom: 2rem;
+  object-fit: cover;
+}
+
+.mega-menu__content__banner span {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.mega-menu__content__banner a {
+  display: block;
+  color: #000;
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
 }

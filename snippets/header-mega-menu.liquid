@@ -71,12 +71,33 @@
                       {%- endif -%}
                     </li>
                   {%- endfor -%}
+
+                  <div class="mega-menu__content__banner">
+                    {%- for block in section.blocks -%}
+                      {% assign tiggerMenuItem = block.settings.trigger_menu_item  | downcase | replace: ' ', '_' %}
+                      {% assign linkTitle = link.title | downcase | replace: ' ', '_' %}
+                      
+                      {% if linkTitle == tiggerMenuItem %}
+                        <div class="mega-menu__content__banner-image">
+                          {{
+                            block.settings.image
+                            | image_url: width: 500
+                            | image_tag:
+                              widths: '50, 75, 100, 150, 200, 300, 400, 500',
+                              alt: block.settings.image.alt
+                          }}
+
+                          <span class="font-paragraph">{{ block.settings.text }}</span>
+                          
+                          {% if block.settings.text_link != blank %}
+                            <a href="{{ block.settings.url_link }}">{{ block.settings.text_link }}</a>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+    
+                    {%- endfor -%}
+                  </div>
                 </ul>
-
-                {% if link.title == 'ready to wear' %}
-                  <h1>hello</h1>
-                {% endif %}
-
               </div>
             </details>
           </header-menu>
