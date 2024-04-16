@@ -58,7 +58,12 @@
                                   aria-current="page"
                                 {% endif %}
                               >
-                                {{ grandchildlink.title | escape }}
+                                {% if grandchildlink.title contains '|' %}
+                                  {{ grandchildlink.title | split: ' | ' | first }}
+                                  <span>{{ grandchildlink.title | split: ' | ' | last }}</span>
+                                {% else %}
+                                  {{ grandchildlink.title | split: ' | ' | first }}
+                                {% endif %}
                               </a>
                             </li>
                           {%- endfor -%}

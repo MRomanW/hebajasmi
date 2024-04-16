@@ -1,0 +1,59 @@
+.header__menu-item span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+
+}
+
+.header__menu-item {
+  padding: 0 1.2rem;
+}
+
+.header__inline-menu {
+  line-height: 0;
+}
+
+.mega-menu__link--level-2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.list-unstyled .mega-menu__link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+.mega-menu__list .mega-menu__link span {
+  font-size: 12px;
+  color: #333333;
+  display: block;
+}
+
+.header--top-center .mega-menu__list>li {
+  width: 19.5%;
+}
+
+.header--top-center .mega-menu__list {
+  justify-content: flex-start;
+}
+
+.mega-menu__content {
+  padding-top: 7rem;
+}
+
+.header--top-center .mega-menu__list.page-width {
+  padding: 0 4.5rem;
+}
