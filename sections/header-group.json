@@ -14,10 +14,21 @@
             "text_link": "discover more",
             "url_link": "#"
           }
+        },
+        "banner_aHUf4r": {
+          "type": "banner",
+          "settings": {
+            "trigger_menu_item": "haute couture",
+            "image": "shopify:\/\/shop_images\/image_2.png",
+            "text": "Autumn\/Winter 2023-24",
+            "text_link": "discover more",
+            "url_link": "#"
+          }
         }
       },
       "block_order": [
-        "banner_qJVRmh"
+        "banner_qJVRmh",
+        "banner_aHUf4r"
       ],
       "settings": {
         "logo_position": "top-center",
