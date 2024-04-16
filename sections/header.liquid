@@ -501,7 +501,6 @@
 {
   "name": "t:sections.header.name",
   "class": "section-header",
-  "max_blocks": 3,
   "settings": [
     {
       "type": "select",
@@ -685,6 +684,43 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "banner",
+      "name": "Mega menu banner",
+      "settings": [
+        {
+          "type": "text",
+          "id": "trigger_menu_item",
+          "label": "Trigger menu item"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Text"
+        },
+        {
+          "type": "header",
+          "content": "link"
+        },
+        {
+          "type": "text",
+          "id": "text_link",
+          "label": "Text link",
+          "default": "Text link"
+        },
+        {
+          "type": "url",
+          "id": "url_link",
+          "label": "URL link"
+        }
+      ]
     }
   ]
 }
