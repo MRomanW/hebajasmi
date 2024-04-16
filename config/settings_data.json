@@ -1,6 +1,7 @@
 {
   "current": {
-    "logo_width": 90,
+    "logo": "shopify:\/\/shop_images\/logo_black.png",
+    "logo_width": 200,
     "type_header_font": "montserrat_n5",
     "custom_header_font": "pp_editorial_newultralight",
     "heading_scale": 100,
