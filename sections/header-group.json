@@ -2,36 +2,60 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
+    "header": {
+      "type": "header",
       "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
+        "banner_qJVRmh": {
+          "type": "banner",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "trigger_menu_item": "haute couture",
+            "image": "shopify:\/\/shop_images\/image_1_3b9f1d74-8f45-4dff-976a-975beb8f8d5c.png",
+            "text": "Spring\/Summer 2024",
+            "text_link": "discover more",
+            "url_link": "#"
+          }
+        },
+        "banner_aHUf4r": {
+          "type": "banner",
+          "settings": {
+            "trigger_menu_item": "haute couture",
+            "image": "shopify:\/\/shop_images\/image_2.png",
+            "text": "Autumn\/Winter 2023-24",
+            "text_link": "discover more",
+            "url_link": "#"
+          }
+        },
+        "banner_aHUf4a": {
+          "type": "banner",
+          "settings": {
+            "trigger_menu_item": "ready to wear",
+            "image": "shopify:\/\/shop_images\/image_2.png",
+            "text": "Autumn\/Winter 2023-24",
+            "text_link": "discover more",
+            "url_link": "#"
+          }
+        },
+        "banner_aHUf4g": {
+          "type": "banner",
+          "settings": {
+            "trigger_menu_item": "ready to wear",
+            "image": "shopify:\/\/shop_images\/image_2.png",
+            "text": "Autumn\/Winter 2023-24",
+            "text_link": "discover more",
+            "url_link": "#"
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "banner_qJVRmh",
+        "banner_aHUf4r",
+        "banner_aHUf4a",
+        "banner_aHUf4g"
       ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
-    },
-    "header": {
-      "type": "header",
       "settings": {
         "logo_position": "top-center",
         "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
@@ -46,7 +70,6 @@
     }
   },
   "order": [
-    "announcement-bar",
     "header"
   ]
 }
