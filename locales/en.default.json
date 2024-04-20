@@ -280,6 +280,7 @@
     "cart": {
       "view_cart": "view cart",
       "title": "Cart",
+      "your_bag": "your bag",
       "caption": "Cart items",
       "remove_title": "Remove {{ title }}",
       "estimated_total": "Total",

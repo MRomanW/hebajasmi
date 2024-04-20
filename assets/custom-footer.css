@@ -160,6 +160,7 @@
 }
 
 .custom-footer-bottom__social ul {
+  display: flex;
   gap: 2.6rem;
   align-items: center;
 }
