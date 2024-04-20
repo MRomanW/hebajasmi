@@ -2106,8 +2106,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
 .cart-count-bubble {
   position: absolute;
-  background-color: rgb(var(--color-button));
-  color: rgb(var(--color-button-text));
+  color: #000;
   height: 1.7rem;
   width: 1.7rem;
   border-radius: 100%;
@@ -2116,7 +2115,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
   align-items: center;
   font-size: 0.9rem;
   bottom: 0.8rem;
-  left: 2.2rem;
+  left: 1.5rem;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 
@@ -2549,7 +2548,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
 .header__icon:not(.header__icon--summary),
 .header__icon span {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
 }
@@ -2580,14 +2579,15 @@ product-info .loading__spinner:not(.hidden) ~ *,
 
 .header__icon,
 .header__icon--cart .icon {
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 2rem;
+  width: 2rem;
   padding: 0;
 }
 
 .header__icon--cart {
   position: relative;
   margin-right: -1.2rem;
+  margin-left: 2rem;
 }
 
 .header__icon--menu[aria-expanded='true']::before {
@@ -2629,7 +2629,7 @@ menu-drawer + .header__search {
 }
 
 .header--top-center > .header__search {
-  display: none;
+  display: inline-flex;
 }
 
 .header--top-center * > .header__search {
@@ -2641,11 +2641,11 @@ menu-drawer + .header__search {
   .header--top-center > .header__search {
     display: inline-flex;
   }
+}
 
-  .header:not(.header--top-center) > .header__search,
-  .header--top-center * > .header__search {
-    display: none;
-  }
+.header:not(.header--top-center) > .header__search,
+.header--top-center * > .header__search {
+  display: none;
 }
 
 .no-js .predictive-search {
@@ -2825,13 +2825,9 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item:hover span {
-  text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
 
-details[open] > .header__menu-item {
-  text-decoration: underline;
-}
 
 details[open]:hover > .header__menu-item {
   text-decoration-thickness: 0.2rem;
@@ -3523,4 +3519,40 @@ img {
 
 .look-book-inner-page main {
   background-color: #141414;
+}
+
+@media screen and (max-width: 750px) {
+  .bacurr-cur-blocker {
+    grid-area: icons;
+  }
+}
+
+.bacurr-cur-blocker {
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  header .bacurr-cur-blocker {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
+
+header-drawer .bacurr-cur-blocker {
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 12;
+}
+
+.bacurr-cur-block {
+  position: absolute;
+  top: -120px;
+  left: 23px;
+}
+
+@media screen and (max-width: 990px) {
+  .bacurr-cur-block { 
+    top: -69px;
+    left: 10px;
+  }
 }
