@@ -3520,3 +3520,39 @@ img {
 .look-book-inner-page main {
   background-color: #141414;
 }
+
+@media screen and (max-width: 750px) {
+  .bacurr-cur-blocker {
+    grid-area: icons;
+  }
+}
+
+.bacurr-cur-blocker {
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  header .bacurr-cur-blocker {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
+
+header-drawer .bacurr-cur-blocker {
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 12;
+}
+
+.bacurr-cur-block {
+  position: absolute;
+  top: -120px;
+  left: 23px;
+}
+
+@media screen and (max-width: 990px) {
+  .bacurr-cur-block { 
+    top: -69px;
+    left: 10px;
+  }
+}
