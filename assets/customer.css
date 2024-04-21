@@ -753,3 +753,81 @@ li[data-address] > h2 {
 .addresses form > div:nth-of-type(7) + div[id] {
   margin-top: 1.5rem;
 }
+
+.template--login {
+  margin-top: 5rem;
+}
+
+.customer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 15rem;
+}
+
+.customer {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.customer>h1, 
+.customer__title {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 110%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.field:after, 
+.select:after, 
+.customer .field:after, 
+.customer select:after, 
+.localization-form__select:after {
+  content: none !important;
+}
+
+.customer .field input {
+  border-bottom: 1px solid #000 !important;
+  padding-left: 0 !important;
+}
+
+.customer .field label {
+  left: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+.customer button {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.customer__policy,
+.account__subtitle {
+  color: #000;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px){
+  .customer__wrapper {
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  .customer__wrapper .customer {
+    padding: 0;
+  }
+  
+  .customer>h1, 
+  .customer__title {
+    font-size: 1.4rem;
+  }
+}
