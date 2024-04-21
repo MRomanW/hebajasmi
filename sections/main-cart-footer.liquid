@@ -22,21 +22,12 @@
   id="main-cart-footer"
   data-id="{{ section.id }}"
 >
-  <div class="page-width">
-    <div class="cart__footer isolate section-{{ section.id }}-padding">
-      {%- if settings.show_cart_note -%}
-        <cart-note class="cart__note field">
-          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
-          <textarea
-            class="text-area field__input"
-            name="note"
-            form="cart"
-            id="Cart-note"
-            placeholder="{{ 'sections.cart.note' | t }}"
-          >{{ cart.note }}</textarea>
-        </cart-note>
-      {%- endif -%}
+  <div class="custom-cart__footer">
+    <div class="title-wrapper-with-link">
+      <h1 class="title title--primary">order summary</h1>
+    </div>
 
+    <div class="cart__footer isolate section-{{ section.id }}-padding">
       <div class="cart__blocks">
         {% for block in section.blocks %}
           {%- case block.type -%}
@@ -59,7 +50,7 @@
                 </div>
 
                 <div class="totals">
-                  <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
+                  <h2 class="totals__total">{{ 'sections.cart.subtotal' | t }}</h2>
                   <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
                 </div>
 
@@ -93,8 +84,10 @@
                   {% endif %}
                   form="cart"
                 >
-                  {{ 'sections.cart.checkout' | t }}
+                  {{ 'sections.cart.checkout_text' | t }}
                 </button>
+
+                <a class="btn--black" href="{{ routes.collections_url }}">continue shopping</a>
               </div>
 
               {%- if additional_checkout_buttons -%}
@@ -105,6 +98,15 @@
           {%- endcase -%}
         {% endfor %}
 
+        <cart-note class="cart__note field">
+          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+          <textarea
+            name="note"
+            form="cart"
+            id="Cart-note"
+            placeholder="add note"
+          >{{ cart.note }}</textarea>
+        </cart-note>
         <div id="cart-errors"></div>
       </div>
     </div>
