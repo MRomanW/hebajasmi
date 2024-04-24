@@ -64,7 +64,6 @@
     },
     "custom_section_collection_slider_zE9APj": {
       "type": "custom-section-collection-slider",
-      "disabled": true,
       "settings": {
         "collection": "resort-2024",
         "products_to_show": 16,
